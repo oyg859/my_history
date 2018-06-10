@@ -12,8 +12,7 @@ router.get('/goLoginPage', controller.goLoginPage);
 router.post('/doLogin', controller.doLogin);
 
 router.post('/doLogout', controller.doLogout);
-router.post('/goJoinPage', controller.checkDuplicateEmail);
 router.post('/doJoin', controller.doJoin);
-router.post('/checkDuplicateEmail', controller.checkDuplicateEmail);
+router.post('/checkExistEmail', controller.checkExistEmail);
 
 module.exports = router;

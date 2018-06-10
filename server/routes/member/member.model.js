@@ -4,19 +4,18 @@
 var connMysql = require('../../config/mysql')();
 var Promise = require('promise');
 
-var sum = function (a, b){
-    return a+b;
-}
+
+// exports.doLogin 함수 처리 :  유저이메일 & 패스워드 DB 존재여부 체크
 var checkLogin = function checkLogin(userEmail, userPw){
     return new Promise(function(resolved, rejected){
         userPw = "f7e6b5508619c1549ed4d9f0db4e0e76fe83b9168cd908f7704c7f3b74e4c9b9";
         console.log("userEmail:::::::::::::::"+userEmail);
         console.log("userPw:::::::::::::::::::"+ userPw);
-        let sql2 = 
+        let sql = 
     //    'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPassword FROM member WHERE 1=1 AND user_email =? AND user_password= ?';
         'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPw FROM project_x.member WHERE 1=1 AND user_email =? AND user_password=?';
     
-        connMysql.query(sql2, [userEmail, userPw], function (err, rows, fields) {
+        connMysql.query(sql, [userEmail, userPw], function (err, rows, fields) {
                 if (err) {
                     console.log(err);
                     res.status(500);
@@ -36,9 +35,70 @@ var checkLogin = function checkLogin(userEmail, userPw){
     });
 }
 
+// exports.doJoin 함수 처리
+var joinMember = function joinMember(userEmail, userPw, userName){
+    return new Promise(function(resolved, rejected){
+        console.log("userEmail:::::::::::::::"+userEmail);
+        console.log("userPw:::::::::::::::::::"+ userPw);
+        console.log("userName:::::::::::::::::::"+ userName);
+        let sql = 
+        'INSERT INTO project_x.member(`user_key`, `user_email`, `user_password`,  `user_name`, `join_date`) VALUES (sha2(md5(random_bytes(64)), "256"), ? , sha2(md5(?), "256"), ?, now())';
+    
+        connMysql.query(sql, [userEmail, userPw, userName], function(err, rows, fields){
+            if(err){
+                console.log(err);
+                res.status(500);
+            } else {
+                console.log("회원가입 성공!!!!!!!!");
+
+                userInfo = {
+                    result : "success"  };               
+                console.log(userInfo);
+                resolved(userInfo);
+            }
+        });
+    });
+}
+
+// exports.checkExistEmail 함수 처리
+var getEmail = function getEmail(userEmail){
+    return new Promise(function(resolved, rejected){
+        console.log("userEmail:::::::::::::::" + userEmail);
+        let sql = 
+        'SELECT user_email AS userEmail FROM project_x.member WHERE user_email = ?';
+        let resultCheckEmail = {};
+
+        connMysql.query(sql, [userEmail], function(err, rows, fields){
+            if(err){
+                console.log(err);
+                res.status(500);
+            } else {
+                console.log("이메일 조회 완료 !!!!!!!!");     
+                let userEmail = rows[0].userEmail; 
+                if(userEmail === null){
+                    resultCheckEmail = {
+                        result: "false"
+                    };
+                    console.log("이메일 존재 안함 !!!!!!!!");   
+                    resolved(resultCheckEmail);
+                } else {
+                console.log("이메일 존재함 !!!!!!!!");
+                resultCheckEmail = {
+                    result: "true"
+                }; 
+                console.log(userEmail);
+                console.log(resultCheckEmail);
+                resolved(resultCheckEmail);
+            }
+        }
+    });
+});
+}
+
 module.exports = {
     checkLogin : checkLogin,
-    sum : sum
+    joinMember : joinMember,
+    getEmail : getEmail
 };
 
 // exports.checkLogin = function(userEmail, userPw, req, res){

@@ -4,5 +4,23 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies":[
+    {
+      "path": "/member/checkExistEmail",
+      "proxyUrl": "http://127.0.0.1:3000/member/checkExistEmail"
+    },
+    {
+      "path": "/member/doJoin",
+      "proxyUrl": "http://127.0.0.1:3000/member/doJoin"
+    },
+    {
+      "path": "/member/doLogin",
+      "proxyUrl": "http://127.0.0.1:3000/member/doLogin"
+    },
+    {
+      "path": "/getInfo",
+      "proxyUrl": "http://localhost:3000/getInfo"
+    }
+  ]
 }

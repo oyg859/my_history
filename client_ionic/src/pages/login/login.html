@@ -14,28 +14,114 @@
 
 
 <ion-content padding>
-<ion-list>
-  <ion-item>
-    <!-- <ion-label fixed>유저이메일</ion-label> -->
-    <ion-input type="text" [placeholder]="usernamePlaceHolder"
-    [(ngModel)]="userEmail"></ion-input> 
-  </ion-item>
-  <ion-item>
-    <!-- <ion-label fixed>비밀번호</ion-label> -->
-    <ion-input type="password" [placeholder]="userPwPlaceHolder"
-    [(ngModel)]="userPw"></ion-input> 
-  </ion-item>
-</ion-list>
+  <ion-row>
+    <ion-col text-center>
+      <form [formGroup]="loginForm">
+      <ion-list>
+        <ion-item>
+          <!-- <ion-label fixed>유저이메일</ion-label> -->
+          <ion-input (blur)="checkExistEmail($event)" formControlName="userEmailForm"  type="text" [placeholder]="usernamePlaceHolder" [(ngModel)]="userEmail" 
+          [class.error1]="!loginForm.controls.userEmailForm.valid && loginForm.controls.userEmailForm.dirty"></ion-input>
+        </ion-item>
+        <p  text-left style="margin-left:23px; color:#0064FF;" *ngIf="( loginForm.get('userEmailForm').hasError('maxlength') || loginForm.get('userEmailForm').hasError('pattern') 
+                      ||loginForm.get('userEmailForm').hasError('required') ) && loginForm.get('userEmailForm').touched">
+           이메일 형식이 올바르지 않습니다.
+        </p>
+        <div text-left style="margin-left:23px; color:#0064FF;" [innerHTML]=resultText></div>
+        <ion-item>
+          <!-- <ion-label fixed>비밀번호</ion-label> -->
+          <ion-input formControlName="userPwForm" type="password" [placeholder]="userPwPlaceHolder" [(ngModel)]="userPw"
+          [class.error1]="!loginForm.controls.userPwForm.valid"></ion-input>
+        </ion-item>
+        <p text-left style="margin-left:23px; color:#0064FF;" *ngIf="( loginForm.get('userPwForm').hasError('minlength') || loginForm.get('userPwForm').hasError('maxlength') || loginForm.get('userPwForm').hasError('pattern') 
+                      ||loginForm.get('userPwForm').hasError('required') ) && loginForm.get('userPwForm').touched">
+           영문,숫자,특수문자를 혼합하여 8자리~20자리 이내로 입력해주세요.
+        </p>
+        <p></p>
+      </ion-list>
 
-<button ion-button (click)="doLogin()">로그인</button>
+      <button ion-button (click)="doLogin()" style="width: 300px; height: 50px;">로그인</button>
 
-<ion-list>
-  <ion-item *ngIf="userEmail!=undefined && userEmail.length>0">
-    <p> user email: {{userEmail}}</p>
-  </ion-item>
-  <ion-item *ngIf="userPw!=undefined && userPw.length>0">
-    <p> user pW: {{userPw}}</p>
-  </ion-item>
-</ion-list>
-
+      <ion-list>
+        <ion-item *ngIf="userEmail!=undefined && userEmail.length>0">
+          <p> user email: {{userEmail}}</p>
+        </ion-item>
+        <ion-item *ngIf="userPw!=undefined && userPw.length>0">
+          <p> user pW: {{userPw}}</p>
+        </ion-item>
+      </ion-list>
+    </form>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
+<!-- 
+
+================
+
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-login',
+  templateUrl: 'login.html',
+})
+export class LoginPage {
+
+  userEmail:string;
+  userPw:string;
+
+  usernamePlaceHolder:string = "이메일 입력";
+  userPwPlaceHolder:string = "비밀번호 입력";
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private http:HttpClient, private alertController: AlertController) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
+  }
+
+  doLogin(){
+    console.log("user 이메일: "+ this.userEmail);
+    console.log("user 비밀번호: "+ this.userPw);
+    
+    
+    //let url="http://127.0.0.1:3000/member/doLogin";
+    let url="http://127.0.0.1:8100/member/doLogin";
+    //let body={userEmail: this.userEmail, userPw: this.userPw};
+    //let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    let headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
+    let body = 'userEmail='+ this.userEmail + '&userPw=' + this.userPw;
+
+    this.http.post(url, body, {headers:headers}).subscribe((res:any)=>{
+      //let response = JSON.parse(JSON.stringify(res));
+      let response = JSON.parse(JSON.stringify(res));
+      console.log("응답 메일 값: "+ response);
+
+      if(response.length > 0){
+        this.navCtrl.setRoot(TabsPage);
+      }else{
+        let alert = this.alertController.create({
+          title: '로그인 실패하였습니다.',
+          buttons: ['확인']
+        });
+        alert.present();
+        }
+      },(err)=>{
+        console.log("post-에러: "+JSON.stringify(err));
+    });
+  }
+} -->

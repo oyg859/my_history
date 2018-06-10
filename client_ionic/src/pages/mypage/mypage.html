@@ -1,0 +1,115 @@
+    
+<ion-header>
+    <ion-toolbar primary>
+      <ion-segment [(ngModel)]="mypageTab" >
+        <ion-segment-button  value="history" >
+          히스토리
+        </ion-segment-button>
+        <ion-segment-button value="location">
+          위치
+        </ion-segment-button>
+        <ion-segment-button value="review">
+          리뷰
+        </ion-segment-button>
+        <ion-segment-button value="blist">
+          버킷리스트
+        </ion-segment-button>   
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content padding>
+      <ion-item text-align="right">
+          <span tabIcon="md-create">쓰기</span>
+      </ion-item>
+
+       <div [ngSwitch]="mypageTab">
+        <ion-list *ngSwitchCase="'history'">
+            <ion-item>마이페이지 목록</ion-item> 
+            <!-- 게시글이 있다면..  -->
+            <!-- <ion-item *ngif="history_index"> -->
+                <!-- for 문으로 게시글 출력-->
+                <ion-item>
+                  <span>프로필 이미지</span>
+                  <span> 닉네임 </span>
+                  <span> 작성일시</span>
+                  <span> 발생 장소</span>
+                  <span> 게시글별 수정/삭제 메뉴</span>
+                </ion-item>
+                <ion-item>
+                  제목
+                </ion-item>
+                <ion-item>
+                    본문 & 사진
+                </ion-item>
+                <ion-item>
+                  해시태그
+                </ion-item>
+                <!-- 댓글이 있다면 댓글 출력-->
+                <ion-item>
+                  댓글
+                </ion-item>
+                <ion-item>
+                  <span>좋아요수</span>
+                  <span>댓글수</span>
+                  <span>공유수</span>
+                </ion-item>
+  
+              <!-- </ion-item> -->
+              <!-- 게시글이 없다면 게시글 입력 유도 메시지 출력 -->
+
+        </ion-list> 
+        <div *ngSwitchCase="'location'">
+            위치 목록<br>
+            위치 목록<br>
+            위치 목록<br>
+            위치 목록<br>
+            위치 목록<br>
+            위치 목록<br>
+            위치 목록<br>
+        </div> 
+        <div *ngSwitchCase="'review'">
+            리뷰 목록
+        </div> 
+        <div *ngSwitchCase="'blist'">
+            버킷리스트 목록
+        </div>       
+      </div>
+    </ion-content>
+
+    <!-- <ion-content padding>
+
+        <div>
+          <ion-segment [(ngModel)]="abc">
+            <ion-segment-button value="Segment1">
+              Segment Title
+            </ion-segment-button>
+            <ion-segment-button value="segment2">
+              Segment Title
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      
+        <div [ngSwitch]="abc">
+          <ion-list *ngSwitchCase="'segment2'" class="list-fixed">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/1.jpg">
+              </ion-thumbnail>
+              <h2>List Item 1</h2>
+              <p>List Item Subtitle</p>
+              <button ion-button clear item-end>View</button>
+            </ion-item>
+          </ion-list>
+      
+          <ion-list *ngSwitchCase="'segment1'" class="list-fixed">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/3.png">
+              </ion-thumbnail>
+              <h2>List Item Title 1</h2>
+              <p>Subheading</p>
+              <button ion-button clear item-end>View</button>
+            </ion-item>
+          </ion-list>
+        </div> -->
