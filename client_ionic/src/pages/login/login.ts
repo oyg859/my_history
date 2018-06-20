@@ -7,10 +7,15 @@ import { ServerProvider } from '../../providers/server/server';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValueTransformer } from '@angular/compiler/src/util';
 
-@IonicPage()
+@IonicPage(
+  {name: 'login', 
+  segment: 'login',
+  defaultHistory: ['intro']}
+)
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  
 })
 export class LoginPage {
 
@@ -61,17 +66,16 @@ export class LoginPage {
        this.resultText = "<ion-item>이메일 존재<ion-item>";
        return true;
      }else{
-       let alert = this.alertController.create({
-         title: '존재하지 않는 회원정보 입니다.',
-         buttons: ['확인']
-       });
-       alert.present();
+      console.log("회원정보 없음.");
+      this.resultText = "<ion-item>존재하지 않는 이메일 주소입니다.<ion-item>";
+      return true;
        }
      },(err)=>{
        console.log("post-에러: "+JSON.stringify(err));
    });
   }
 
+  // 로그인 버튼 클릭 시
   doLogin(){
     console.log("user 이메일: "+ this.userEmail);
     console.log("user 비밀번호: "+ this.userPw);
@@ -93,7 +97,7 @@ export class LoginPage {
         this.navCtrl.setRoot(TabsPage);
       }else{
         let alert = this.alertController.create({
-          title: '존재하지 않는 회원정보 입니다.',
+          title: '존재하지 않는 회원정보 입니다.!',
           buttons: ['확인']
         });
         alert.present();

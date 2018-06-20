@@ -6,32 +6,42 @@ var Promise = require('promise');
 
 
 // exports.doLogin 함수 처리 :  유저이메일 & 패스워드 DB 존재여부 체크
-var checkLogin = function checkLogin(userEmail, userPw){
-    return new Promise(function(resolved, rejected){
-        userPw = "f7e6b5508619c1549ed4d9f0db4e0e76fe83b9168cd908f7704c7f3b74e4c9b9";
-        console.log("userEmail:::::::::::::::"+userEmail);
-        console.log("userPw:::::::::::::::::::"+ userPw);
-        let sql = 
-    //    'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPassword FROM member WHERE 1=1 AND user_email =? AND user_password= ?';
-        'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPw FROM project_x.member WHERE 1=1 AND user_email =? AND user_password=?';
-    
+var checkLogin = function checkLogin(userEmail, userPw) {
+    return new Promise(function (resolved, rejected) {
+
+        console.log("userEmail:::::::::::::::" + userEmail);
+        console.log("userPw:::::::::::::::::::" + userPw);
+        let sql =
+            //    'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPassword FROM member WHERE 1=1 AND user_email =? AND user_password= ?';
+            'SELECT user_name AS userName, user_email AS userEmail, user_password AS userPw FROM project_x.member WHERE 1=1 AND user_email =? AND user_password = sha2(md5(?), "256")';
+
         connMysql.query(sql, [userEmail, userPw], function (err, rows, fields) {
-                if (err) {
-                    console.log(err);
-                    res.status(500);
-                } else {  
-                    console.log("로그인 성공!");
-                    
+            if (err) {
+                console.log(err);
+                res.status(500);
+            } else {
+                console.log("이메일 조회 완료 !!!!!!!!");
+                // let userEmail = rows[0].userEmail; 
+                if (typeof rows == "undefined" || rows == null || rows == "") {
+                    resultCheckEmail = {
+                        result: "false"
+                    };
+                    console.log("이메일과 비밀번호가 일치하지 않음 !!!!!!!!");
+                    resolved(resultCheckEmail);
+                } else {
+                    console.log("로그인 성공_이메일과 비번 일치!");
                     userInfo = {
-                    userEmail: rows[0].userEmail,
-                    userName: rows[0].userName,
-                    userPw: rows[0].userPw};
+                        userEmail: rows[0].userEmail,
+                        userName: rows[0].userName,
+                        userPw: rows[0].userPw
+                    };
                     userInfo = JSON.stringify(userInfo);
-                    console.log("DB 후 유저 인포>>>>>>>"+userInfo);
+                    console.log("DB 조회후 userInfo 저장내역 >>>>>>>" + userInfo);
                     //return userInfo;     
-                    resolved(userInfo+"님아~~~~~~~~~~!!!!!!!");
+                    resolved(userInfo + "님아~~~~~~~~~~!!!!!!!");
                 }
-            }); 
+            }
+        });
     });
 }
 
@@ -51,10 +61,12 @@ var joinMember = function joinMember(userEmail, userPw, userName){
             } else {
                 console.log("회원가입 성공!!!!!!!!");
 
-                userInfo = {
+                user = {
+                    userEmail : userEmail,
+                    userName : userName,
                     result : "success"  };               
-                console.log(userInfo);
-                resolved(userInfo);
+                console.log(user);
+                resolved(user);
             }
         });
     });
@@ -70,12 +82,13 @@ var getEmail = function getEmail(userEmail){
 
         connMysql.query(sql, [userEmail], function(err, rows, fields){
             if(err){
+               
                 console.log(err);
                 res.status(500);
             } else {
-                console.log("이메일 조회 완료 !!!!!!!!");     
-                let userEmail = rows[0].userEmail; 
-                if(userEmail === null){
+                console.log("이메일 조회 완료 !!!!!!!!"); 
+                // let userEmail = rows[0].userEmail; 
+                if (typeof rows == "undefined" || rows == null || rows == "") {
                     resultCheckEmail = {
                         result: "false"
                     };
@@ -84,10 +97,10 @@ var getEmail = function getEmail(userEmail){
                 } else {
                 console.log("이메일 존재함 !!!!!!!!");
                 resultCheckEmail = {
-                    result: "true"
+                    result: "true",
+                    userEmail : rows[0].userEmail,
+                    userName : rows[0].userName
                 }; 
-                console.log(userEmail);
-                console.log(resultCheckEmail);
                 resolved(resultCheckEmail);
             }
         }

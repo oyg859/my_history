@@ -23,11 +23,13 @@
           <ion-input (blur)="checkExistEmail($event)" formControlName="userEmailForm"  type="text" [placeholder]="usernamePlaceHolder" [(ngModel)]="userEmail" 
           [class.error1]="!loginForm.controls.userEmailForm.valid && loginForm.controls.userEmailForm.dirty"></ion-input>
         </ion-item>
-        <p  text-left style="margin-left:23px; color:#0064FF;" *ngIf="( loginForm.get('userEmailForm').hasError('maxlength') || loginForm.get('userEmailForm').hasError('pattern') 
-                      ||loginForm.get('userEmailForm').hasError('required') ) && loginForm.get('userEmailForm').touched">
+        <p text-left style="margin-left:23px; color:#0064FF;" *ngIf="( loginForm.get('userEmailForm').hasError('maxlength') || loginForm.get('userEmailForm').hasError('pattern') 
+                      ||loginForm.get('userEmailForm').hasError('required') ) && loginForm.get('userEmailForm').touched; else emailValidSuccess">
            이메일 형식이 올바르지 않습니다.
         </p>
-        <div text-left style="margin-left:23px; color:#0064FF;" [innerHTML]=resultText></div>
+        <ng-template #emailValidSuccess>
+        <p [innerHTML]=resultText text-left style="margin-left:23px; color:#0064FF;"></p>
+        </ng-template>
         <ion-item>
           <!-- <ion-label fixed>비밀번호</ion-label> -->
           <ion-input formControlName="userPwForm" type="password" [placeholder]="userPwPlaceHolder" [(ngModel)]="userPw"
@@ -40,7 +42,7 @@
         <p></p>
       </ion-list>
 
-      <button ion-button (click)="doLogin()" style="width: 300px; height: 50px;">로그인</button>
+      <button ion-button (click)="doLogin()" style="width: 300px; height: 50px;" [disabled]="loginForm.invalid">로그인</button>
 
       <ion-list>
         <ion-item *ngIf="userEmail!=undefined && userEmail.length>0">

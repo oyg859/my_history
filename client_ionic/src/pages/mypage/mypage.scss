@@ -1,3 +1,262 @@
 page-mypage {
 
+    // 메인 툴바 
+    .topToolbar {
+       
+       
+    }
+
+    // 메인 툴바 버튼
+    .toolbarSegmentBtn {
+        color: white !important ;
+    //  background-color: #019ad2;
+    }
+
+    // 전체 화면 (메뉴, 네비 제외) 
+    ion-content {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0px 0px 0px 0px;
+        border: none;
+        outline: none;
+    }
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        
+    // 카테고리 텍스트
+    .categories {
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 10px;
+      }   
+    
+      }
+      // 카테고리 선택버튼 배경 이미지
+      .cardCategoryImage {
+        margin: 0 auto;   
+        max-width: 100%;
+        height: 100px;
+        display: block;
+        min-height: 100%;
+        left: 0px;
+        right: 0px;
+          
+      }
+         
+      .card-title {
+        position: absolute;
+        top: 30%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 65%;
+        width: 100%;
+        color: #fff;
+      }
+
+      // 게시글 상단 위치 정보 외곽 col 
+      .boardlocationInfoCol {
+          background-color: white;
+          padding-top: 7px;
+      }
+
+      // 게시글 상단 위치 정보 아이콘 & 텍스트 
+      .boardlocationInfoText {
+        color : grey;
+        padding-top: 5px;
+        font-size: 1.0em;   
+    }
+
+      // 게시글 상단 사이드 메뉴 (more) 
+      .boardsideMenu {
+        background-color: white;
+        padding-top: 6px;
+        zoom: 1.2;
+      }
+
+      // 게시글 본문 내용(텍스트, 이미지)  영역
+      .boardContentsArea {
+        // 줄바꿈 코드
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-break:break-all; word-wrap:break-word;
+    
+        margin-top: -10px;
+        margin-bottom: -15px;
+    }
+
+      // 게시글 해시태그 
+      .hashTag {
+        font-size: 1.0em; 
+      }
+
+      // 게시글 댓글
+      .replyText {
+        font-size: 1.0em; 
+        padding-top: -10px;
+      }
+
+      // 게시글 하단 버튼 (좋아요/ 댓글/ 공유)
+      .boardSelectBtn {
+        background-color: white;
+        color: grey;
+        zoom: 1.2;
+        padding-left: 10px;
+      }
+
+/********************************************
+****************** 히스토리 ****************/
+
+      // 프로필 최상단 헤더 이미지
+      .profileHeaderImg {
+        width: 100%;
+        max-height: 140px;
+    }
+
+      // 프로필 전체 배경 이미지 
+      .appBackground {
+          padding-top: -20px;
+          background-color: rgb(243, 241, 241);
+          color : dark;
+      }
+
+      // 프로필 디자인 버튼 
+      .profileDesignBtn {
+          background-color: #2E4053;
+          color: yellow;
+          margin-left: -1px;
+          font-size: 0.9em;
+      }
+
+
+      // 프로필 "편집" 버튼 
+      .profileEditBtn {
+        background-color: white;
+        color: black;
+        font-size: 0.9em;
+        border: 0.5px solid grey;
+      }
+
+      // 프로필 대표 이미지 / 메인 정보 통합틀 Div
+      .profileMainDiv {
+          margin-top : -25px;
+      }
+
+     // 프로필 대표 이미지
+      .mainProfileImage {
+          border: 5px solid white;
+          width: 120px;
+          height: 120px;
+          margin-left: -5px; 
+      }
+
+      // 프로필 메인 정보
+      .profileMainInfo {
+          font-size: 1.0em;
+          padding-left: 18px;
+          border-left : 5px solid #DDDDDD;
+          margin-top : 25px;
+          margin-left :-30px;  
+      }
+      // 프로필 메인 소셜바 (친구 추가, 팔로우, 인생 사전) 
+      .profileSocialbar {
+          margin-top: -0.7px;
+          margin-left: -2%; 
+          padding: 10px;
+          width: 102%;
+          color : white;
+          background-color: #2E4053  ;
+      }
+      // 프로필 메인 소셜바 버튼
+      .profilesocialbarBtn{
+          padding-bottom: 5px;
+          font-size : 25px;
+      }
+      // 프로필 메인 상세 제목
+      .profileMainTitle{
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 3px;
+      }
+      // 프로필 메인 상세 내용 
+       .profileMaintextDetail{
+        padding-top: 10px;
+        font-size: 1.0em;  
+        text-align: left;
+      }
+      // 모두 보기(공용 사용) 버튼
+      .viewAllBtn {
+          background-color: white;
+          color: black;
+          margin-left: -20px;
+      }
+      // 프로필 나이별 히스토리 이미지
+      .profileHistoryPic{
+
+        }
+        
+     // 카테고리 추가 버튼
+       .addCategoryBtn {
+        font-size :  20px;
+        background-color: white;
+        color: black;
+        margin-top: 15px;
+       }
+    
+    // 카테고리 조정 버튼
+       .adjustCategory{
+        font-size :  25px;  
+        background-color: white;
+        color: black;
+        padding-top: 10px;
+        padding-left: 30px;
+        text-align:  right;
+       }
+
+    
+/********************************************
+****************** 위치 ****************/
+
+       // 상단 위치 게시글 작성 페이지 가기 버튼
+       .goAddLocationBtn{
+        margin-left: 5px;
+        width: 100%;
+        background-color: blueCustom1;
+       }
+
+       // 방문한 지역 타이틀 텍스트
+       .visitLocationTitleTxt{
+           margin-top: -10px;
+           margin-left: -5px;
+           background-color: white;
+         
+       }
+       // 방문한 지역_ 유저 랭킹 및 스테이터스
+       .userLocationStatus{
+           background-color: white;
+       }
+
+       // 방문한 지역_최근 방문 지역 Div
+       .recentlyVisitLocationDiv {
+        background-color: white;
+       }
+
+       // 미션 타이틀 텍스트
+       .locationMissionTitleTxt{
+        margin-top: -10px;
+        margin-left: -5px;
+        background-color: white;
+       }
+
 }

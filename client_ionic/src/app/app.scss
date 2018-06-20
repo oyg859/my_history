@@ -14,3 +14,86 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// 모달 팝업창
+.modal-wrapper {
+    position: absolute;
+    overflow: hidden;
+    // max-width: 280px;
+    max-width: 90%;
+
+    border-radius: 2px;
+    // width: 80vw;
+    width: 90%;
+    height: 40vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+    box-shadow: 0 16px 20px rgba(0,0,0,.4);
+    background-color: #fafafa;
+  }
+  // 모달 팝업창 뒷(호출한 페이지) 배경
+  ion-modal {
+    padding: 30px;
+    background: rgba(0,0,0,0.7)
+    }
+
+// 메인 하단 탭
+ion-tabs .tabbar {
+    max-height: 47px;
+}
+
+// 최상단 헤더(네비바) 
+ion-navbar, ion-navbar.toolbar {
+    height: 56px;
+    min-height: 56px;
+}
+
+// 최상단 헤더(네비바) 텍스트
+.topTitleBarText {
+    color: white;
+    padding-top: 5px;
+ }
+
+
+
+// 최상단 타이틀바 텍스트
+ .topTitleBarText {
+     margin-top : 8px;
+
+ }
+
+// 최상단 타이틀바 우측 버튼 
+  .titlebarDoneBtn {
+      font-size: 1.2em;
+      color : white;
+  }
+
+/////// 푸터 ///////
+ // 최하단 푸터 버튼 툴바
+  ion-footer {
+    
+    height: 30px;
+   
+  }
+  ion-footer ion-toolbar {
+    margin-top: -25px;
+    border-top: 3px solid white;
+    
+   
+  }
+
+  .boardBottomToolbar {
+      background-color: white;
+      
+  }
+  .boardBottomToolBtn{
+ 
+    background-color: white;
+    padding-left: 10px;
+    zoom: 1.8;
+    
+}

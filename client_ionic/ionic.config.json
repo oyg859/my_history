@@ -7,6 +7,10 @@
   },
   "proxies":[
     {
+      "path": "/mypage/viewMypageHistory",
+      "proxyUrl": "http://127.0.0.1:3000/mypage/viewMypageHistory"
+    },
+    {
       "path": "/member/checkExistEmail",
       "proxyUrl": "http://127.0.0.1:3000/member/checkExistEmail"
     },
@@ -18,6 +22,12 @@
       "path": "/member/doLogin",
       "proxyUrl": "http://127.0.0.1:3000/member/doLogin"
     },
+    
+    {
+      "path": "/member/doLogout",
+      "proxyUrl": "http://127.0.0.1:3000/member/doLogout"
+    },
+
     {
       "path": "/getInfo",
       "proxyUrl": "http://localhost:3000/getInfo"

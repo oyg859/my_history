@@ -16,25 +16,50 @@
 <ion-content padding>
   <ion-row>
     <ion-col text-center>
+     <form [formGroup]="joinForm">
       <ion-list>
         <ion-item>
+          <!-- 이메일 입력 체크-->
           <!-- <ion-label fixed>유저이메일</ion-label> -->
-          <ion-input type="text" [placeholder]="usernamePlaceHolder" [(ngModel)]="userEmail"></ion-input>
+          <ion-input  #emailInput (blur)="checkExistEmail($event)" formControlName="userEmailForm"  type="text" [placeholder]="userEmailPlaceHolder" [(ngModel)]="userEmail" 
+          [class.error1]="!joinForm.controls.userEmailForm.valid && joinForm.controls.userEmailForm.dirty"></ion-input>
         </ion-item>
+        <p text-left style="margin-left:23px; color:#0064FF;" *ngIf="( joinForm.get('userEmailForm').hasError('maxlength') || joinForm.get('userEmailForm').hasError('pattern') 
+                      ||joinForm.get('userEmailForm').hasError('required') ) && joinForm.get('userEmailForm').touched; else emailValidSuccess">
+           이메일 형식이 올바르지 않습니다.
+        </p>
+        <ng-template #emailValidSuccess>
+        <p [innerHTML]=resultText text-left style="margin-left:23px; color:#0064FF;"></p>
+        </ng-template>
+
+        <!-- 비밀번호 입력 체크-->
         <ion-item>
-          <ion-input type="password" [placeholder]="userPwPlaceHolder" [(ngModel)]="userPw"></ion-input>
+            <ion-input formControlName="userPwForm" type="password" [placeholder]="userPwPlaceHolder" [(ngModel)]="userPw"
+              [class.error1]="!joinForm.controls.userPwForm.valid"></ion-input>
         </ion-item>
+            <p text-left style="margin-left:23px; color:#0064FF;" *ngIf="( joinForm.get('userPwForm').hasError('minlength') || joinForm.get('userPwForm').hasError('maxlength') || joinForm.get('userPwForm').hasError('pattern') 
+                          ||joinForm.get('userPwForm').hasError('required') ) && joinForm.get('userPwForm').touched">
+               영문,숫자,특수문자를 혼합하여 8자리~20자리 이내로 입력해주세요.
+            </p>
+        <!-- 유저 이름 체크 (중복 허용)-->
+        <P></P>
         <ion-item>
-          <ion-input type="userName" [placeholder]="userNamePlaceHolder" [(ngModel)]="userName"></ion-input>
+          <ion-input formControlName="userNameForm" type="text" [placeholder]="userNamePlaceHolder" [(ngModel)]="userName"
+          [class.error1]="!joinForm.controls.userNameForm.valid && joinForm.controls.userNameForm.dirty"></ion-input>
         </ion-item>
+        <p text-left style="margin-left:23px; color:#0064FF;" *ngIf="( joinForm.get('userNameForm').hasError('maxlength') 
+                ||joinForm.get('userNameForm').hasError('required') ) && joinForm.get('userNameForm').touched;">
+          2~20자 이내로 입력 가능합니다.
+        </p>
         <p></p>
       </ion-list>
       
         회원가입 시 <span id="joinAgree" style="color: grey"><a
         href="http://www.naver.com">이용약관</a></span>에 동의한 것으로 간주합니다. 
         <p>
-      <button ion-button (click)="doJoin()" style="width: 300px; height: 50px;">회원가입</button>
+      <button ion-button (click)="doJoin()" style="width: 300px; height: 50px;" [disabled]="joinForm.invalid">회원가입</button>
         </p>
+      </form>
     </ion-col>
   </ion-row>
 </ion-content>

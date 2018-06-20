@@ -1,0 +1,14 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { AddReviewPage } from './add-review';
+import { Autosize } from '../../../directives/autosize/autosize';
+
+@NgModule({
+  declarations: [
+    AddReviewPage
+  ],
+  imports: [
+    IonicPageModule.forChild(AddReviewPage),
+  ],
+})
+export class AddReviewPageModule {}

@@ -2,17 +2,18 @@
  * @author    Oh young jun
  */
 
-var express = require('express');
-var router = express.Router();
-var controller = require('./member.controller');
 
-
-router.get('/goLoginPage', controller.goLoginPage);
-
-router.post('/doLogin', controller.doLogin);
-
-router.post('/doLogout', controller.doLogout);
-router.post('/doJoin', controller.doJoin);
-router.post('/checkExistEmail', controller.checkExistEmail);
-
+    //var app = require('../../config/express');
+    var app = require('express');
+    var router = app.Router();
+    var controller = require('./member.controller');
+    
+    router.post('/doLogin', controller.doLogin);
+    router.post('/doLogout', controller.doLogout);
+    router.post('/doJoin', controller.doJoin);
+    router.post('/checkExistEmail', controller.checkExistEmail);
+    // router.post('/goLoginPage', controller.goLoginPage);
+    // router.post('/goTabsPage', controller.goTabsPage);
+     
+        
 module.exports = router;

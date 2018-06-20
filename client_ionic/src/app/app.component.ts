@@ -11,7 +11,7 @@ import { IntroPage } from '../pages/intro/intro';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = IntroPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

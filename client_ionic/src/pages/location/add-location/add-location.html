@@ -1,0 +1,86 @@
+<ion-header>
+
+  <ion-navbar color="blueCustom1">
+    <ion-row>
+      <ion-col col-8>
+          <h5  class="topTitleBarText">위치 추가</h5>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <button ion-button class="titlebarDoneBtn" icon-start clear small (click)="addLocation()">완료
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item class="currentArea">
+    <strong>{{currentArea}}</strong> 이(가) 인생의 발자취로 저장됩니다.
+  </ion-item>
+  <div class="categoryHeaderImg">
+    <img class="full-image" src="https://postfiles.pstatic.net/MjAxODA2MThfMjA1/MDAxNTI5MzA0NjA4MTUy._X2WIG9_ScFPIHwX7ZYHUDyQuyLW2HsPjrUAkTk7n9Qg.qaiUvf7_wO3DAZfYMSc_A1rSh4TuWKi9tD4Au1ZpFiIg.JPEG.oyg11/current_location_sample.jpg?type=w773">
+  </div>
+
+  <div class="locationSelectBtnDiv" color="dark">
+    <ion-row>
+    <ion-col col-8>
+    <button ion-button icon-start clear>
+      <ion-icon style="color: rgb(109, 108, 108); margin-left: -3px; zoom: 1.1;" name="ios-pin"></ion-icon>
+      <div style="color: grey;  font-size: 1.0em; padding-top:2px;">&emsp;현재 위치: 바르다 김선생</div>
+    </button>
+  </ion-col>
+  <ion-col col-4>
+    <button ion-button icon-start clear>
+        <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1; margin-right: -5px;"  name="ios-star"></ion-icon>
+        <div style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">&ensp;평가하기</div>
+      </button>
+    </ion-col>
+    </ion-row>
+    <hr>
+    <button ion-button icon-start clear>
+      <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-calendar"></ion-icon>
+      <div style="color: grey;  font-size: 1.0em; padding-top:1px;">&emsp;오늘 방문</div>
+    </button>
+    <hr>
+    <button ion-button icon-start clear>
+      <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-list-box"></ion-icon>
+      <div style="color: grey;  font-size: 1.0em; padding-top:1px;">&emsp;위치 분류</div>
+    </button>
+    <hr>
+    <button ion-button icon-start clear>
+      <ion-icon style="color:  rgb(109, 108, 108); zoom: 1.1;" name="ios-camera"></ion-icon>
+      <div style="color: grey;  font-size: 1.0em; padding-top:1px;">&emsp;사진 등록</div>
+    </button>
+    <hr>
+      <ion-textarea class="boardContentsArea" autosize rows="1" type="text" [placeholder]="locationContentPlaceHolder" [(ngModel)]="locationContent"></ion-textarea>
+  </div>
+
+</ion-content>
+
+<ion-footer class="boardBottomToolbar">
+  <!-- 하단 게시판 입력 보조 툴바 (이미지 업로드, 글자 조정 등)-->
+  <ion-toolbar>
+    <ion-row>
+      <!-- 저장된 이미지/ 촬영이미지/ 동영상 업로드 -->
+      <ion-col class="boardBottomToolBtn">
+        <ion-icon (click)="viewAddImage()" name="ios-image-outline"></ion-icon>
+      </ion-col>
+
+      <!-- 연결(다른 장소와) -->
+      <ion-col class="boardBottomToolBtn">
+        <ion-icon (click)="viewAddFeeling" name="ios-link-outline"></ion-icon>
+      </ion-col>
+
+      <!-- 태그 (제일 우측에) -->
+      <ion-col class="boardBottomToolBtn">
+        <div (click)="viewAddTag">#</div>
+      </ion-col>
+
+      <!-- 다른 sns로 포스팅  -->
+      <ion-col class="boardBottomToolBtn">
+        <ion-icon (click)="viewSendPosting" name="ios-send-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

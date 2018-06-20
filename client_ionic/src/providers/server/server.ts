@@ -45,9 +45,8 @@ export class ServerProvider {
       //   { 'Content-Type': 'application/json' });
 
       let headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
-      console.log("무슨 에러입니까~~~~~~~~!!");
       this.http.post(serverUrl, body, { headers: headers }).subscribe((res: any) => {
-        console.log("무슨 에러입니까~~~~~~~~!!");
+     
         console.log("무슨 에러입니까~~~~~~~~!!"+serverUrl);
         resolve(res);
       }, (err) => {

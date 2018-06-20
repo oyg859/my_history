@@ -1,0 +1,36 @@
+page-add-location {
+    
+    // 현재 지역명 (상단 표시되는)
+    .currentArea{
+        background-color: orange;
+        color: white;
+    }
+    // 위치 게시글 버튼 및 텍스트
+    .locationSelectBtnDiv {
+        color: grey;
+        
+        
+    }
+
+    // 위치 게시글 선택 버튼 아이콘
+    .locationSelectIcon{
+        zoom: 1.5;
+        padding-left: 12px;
+    }
+
+// 게시글 본문 내용(텍스트)  영역
+    .boardContentsArea {
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    // 줄바꿈 코드
+     word-wrap: break-word; /* Internet Explorer 5.5+ */
+     white-space: pre-wrap; /* css-3 */
+     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+     white-space: -pre-wrap; /* Opera 4-6 */
+     white-space: -o-pre-wrap; /* Opera 7 */
+     word-break:break-all; word-wrap:break-word;
+
+          }
+}

@@ -1,0 +1,36 @@
+page-add-review {
+    // 카테고리 추가 버튼
+    .addcategoryBtn {
+        text-align: right;
+        margin-top: -10px;
+        padding-right: 20px;
+    }
+
+    // 게시글 본문 내용(텍스트, 이미지)  영역
+    .boardContentsArea {
+    // 줄바꿈 코드
+     word-wrap: break-word; /* Internet Explorer 5.5+ */
+     white-space: pre-wrap; /* css-3 */
+     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+     white-space: -pre-wrap; /* Opera 4-6 */
+     white-space: -o-pre-wrap; /* Opera 7 */
+     word-break:break-all; word-wrap:break-word;
+          }
+    ion-searchbar {
+       
+    }
+
+    .modal-wrapper{
+        position: absolute;
+        width: 90vw;
+        height: 50vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        background: rgba(0,0,0,0.5);
+        
+        }
+}
