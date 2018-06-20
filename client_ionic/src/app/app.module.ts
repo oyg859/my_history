@@ -29,10 +29,10 @@ import { AddReviewPage } from '../pages/review/add-review/add-review';
 import { AddCategoryPage } from '../pages/category/add-category/add-category';
 import { AddHistoryPage } from '../pages/history/add-history/add-history';
 import { AddLocationPage } from '../pages/location/add-location/add-location';
-import { ElasticHeaderModule } from "ionic2-elastic-header/dist";
 import { AddRatingPage } from '../pages/common/add-rating/add-rating';
-import { Detail1Page } from '../pages/detail1/detail1';
-import { Detail2Page } from '../pages/detail2/detail2';
+import { HistoryMainPage } from '../pages/history/history-main/history-main';
+import { LocationMainPage } from '../pages/location/location-main/location-main';
+import { ReviewMainPage } from '../pages/review/review-main/review-main';
 
 
 @NgModule({
@@ -50,8 +50,9 @@ import { Detail2Page } from '../pages/detail2/detail2';
     AutoHideDirective,
     Autosize,
     AddRatingPage,
-    Detail1Page,
-    Detail2Page
+    HistoryMainPage,
+    LocationMainPage,
+    ReviewMainPage
   ],
   imports: [ 
     IntroPageModule,
@@ -83,8 +84,9 @@ import { Detail2Page } from '../pages/detail2/detail2';
     AddReviewPage,
     AddCategoryPage,
     AddRatingPage,
-    Detail1Page,
-    Detail2Page
+    HistoryMainPage,
+    LocationMainPage,
+    ReviewMainPage
   ],
   providers: [
     StatusBar,
