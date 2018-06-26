@@ -30,10 +30,10 @@
       <div style="color: grey;  font-size: 1.0em; padding-top:2px;">&emsp;현재 위치: 바르다 김선생</div>
     </button>
   </ion-col>
-  <ion-col col-4>
-    <button ion-button icon-start clear>
-        <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1; margin-right: -5px;"  name="ios-star"></ion-icon>
-        <div style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">&ensp;평가하기</div>
+  <ion-col col-4 class="ratingBtnArea"  text-right>
+    <button (click)="viewRating()" ion-button icon-start clear>
+        <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1; margin-left: -10px; margin-top: 10px;"  name="ios-star"></ion-icon>
+        <div style="color: grey;  font-size: 1.0em; padding-top:5px; margin-left: -8px;  margin-top: 10px;">&emsp;평가하기</div>
       </button>
     </ion-col>
     </ion-row>

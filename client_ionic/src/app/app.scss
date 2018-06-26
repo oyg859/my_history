@@ -15,6 +15,15 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+
+//////////////////// 전체 배경 /////////////////////////
+ // 프로필 전체 배경 이미지 
+ .appBackground {
+   padding-top: -20px;
+   background-color: rgb(243, 241, 241);
+   color : dark;
+ }
+
 // 모달 팝업창
 .modal-wrapper {
     position: absolute;
@@ -29,7 +38,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; 
     margin: auto;
     border: 0;
     box-shadow: 0 16px 20px rgba(0,0,0,.4);
@@ -44,12 +53,14 @@
 // 메인 하단 탭
 ion-tabs .tabbar {
     max-height: 47px;
+   
 }
+//////////////// 최상단 헤더 /////////////////////
 
 // 최상단 헤더(네비바) 
 ion-navbar, ion-navbar.toolbar {
-    height: 56px;
-    min-height: 56px;
+    height: 45px;
+    min-height: 45px;
 }
 
 // 최상단 헤더(네비바) 텍스트
@@ -58,12 +69,9 @@ ion-navbar, ion-navbar.toolbar {
     padding-top: 5px;
  }
 
-
-
 // 최상단 타이틀바 텍스트
  .topTitleBarText {
      margin-top : 8px;
-
  }
 
 // 최상단 타이틀바 우측 버튼 
@@ -72,18 +80,15 @@ ion-navbar, ion-navbar.toolbar {
       color : white;
   }
 
-/////// 푸터 ///////
+////////////////// 푸터 ///////////////////////////
  // 최하단 푸터 버튼 툴바
   ion-footer {
-    
     height: 30px;
-   
   }
   ion-footer ion-toolbar {
     margin-top: -25px;
     border-top: 3px solid white;
-    
-   
+
   }
 
   .boardBottomToolbar {
@@ -97,3 +102,211 @@ ion-navbar, ion-navbar.toolbar {
     zoom: 1.8;
     
 }
+/////////////// 카테고리 공통////////////////////////////
+///////////////////////////////////////////////////////
+
+// 카테고리 타이틀바(텍스트바) row 
+.categorytitlebarRow{
+  padding-bottom: 10px;
+}
+
+// 카테고리 텍스트
+.categories {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+  }     
+  // 카테고리 선택버튼 배경 이미지
+  .cardCategoryImage {
+    margin: 0 auto;   
+    max-width: 100%;
+    height: 100px;
+    display: block;
+    min-height: 100%;
+    left: 0px;
+    right: 0px;
+  }
+  // 카테고리 이미지 안의 카테고리명 텍스트
+  .category-title {
+    position: absolute;
+    top: 30%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  // 카테고리 이미지 안의 포스트 수 텍스트 (위의 category-title 바로 안에 표시)
+  .category-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    color: #fff;
+  }
+     
+  /////////////// 아이오닉 카드 api 공통////////////////////////////
+///////////////////////////////////////////////////////
+  ion-card {
+    position: relative;
+    text-align: center;
+
+  }
+
+
+/////////////// 게시글 노출 공통 ///////////////////////
+
+  // 게시글 상단 위치 정보 외곽 col 
+  .boardlocationInfoCol {
+      background-color: white;
+      padding-top: 7px;
+  }
+
+  // 게시글 상단 위치 정보 아이콘 & 텍스트 
+  .boardlocationInfoText {
+    color : grey;
+    padding-top: 5px;
+    font-size: 1.0em;   
+}
+
+  // 게시글 상단 사이드 메뉴 (more) 
+  .boardsideMenu {
+    background-color: white;
+    padding-top: 6px;
+    zoom: 1.2;
+  }
+
+  // 게시글 본문 내용(텍스트, 이미지)  영역
+  .boardContentsArea {
+    // 줄바꿈 코드
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-break:break-all; word-wrap:break-word;
+
+    margin-top: -10px;
+    margin-bottom: -15px;
+}
+
+  // 게시글 해시태그 
+  .hashTag {
+    font-size: 1.0em; 
+  }
+
+  // 게시글 댓글
+  .replyText {
+    font-size: 1.0em; 
+    padding-top: -10px;
+  }
+
+  // 게시글 하단 버튼 (좋아요/ 댓글/ 공유)
+  .boardSelectBtn {
+    background-color: white;
+    color: grey;
+    zoom: 1.2;
+    padding-left: 10px;
+  }
+  
+  ////////// 마이페이지 사이드 메뉴 ////////////////
+  ////////////////////////////////////////////////
+
+        // 사이드메뉴_ 최상단 헤더 이미지
+        .sideMenuProfileHeaderImgBtn {
+          position: relative;   
+          display:block;
+          width: 100%;
+          height: 120px;
+     
+      }
+  
+      // 사이드메뉴_ 최상단 헤더 이미지 수정버튼
+      .sideMenuProfileHeaderEditImg {
+          position: absolute;
+          top: 71%;
+          left: 88%;
+          font-size: 2.0em;
+          width: 10px;
+          height: 10px;
+          background-color: rgb(59, 59, 59);
+          opacity: 0.8;
+          color: #fff;
+      }
+    // 사이드메뉴_ 최상단 헤더 사이드메뉴 닫기 버튼
+      .sideMenuHeaderCloseBtn {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 1.3em;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(59, 59, 59, 0.411);
+        opacity: 0.5;
+        color: white;
+      }
+
+      // 사이드메뉴_ 디자인 수정 버튼 영역 Div
+      .sideMenuDesignBtnDiv {
+        
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      // 사이드메뉴_ 디자인 수정 버튼
+      .sideMenuTopNavDesignBtn {
+      
+      zoom: 1.5;
+      color: rgb(184, 75, 32);
+      }
+
+      // 사이드메뉴_ 디자인 수정 텍스트
+      .sideMenuTopNavDesignText {
+        color: rgb(63, 62, 62);
+        font-weight: bold;
+      }
+
+      // 사이드메뉴_ 가족 리스트 영역 Div
+      .sideMenuFamilyBottomLine {
+        margin-top: -12px;
+      }
+
+      // 사이드메뉴_ 카테고리 텍스트 영역
+      .sideMenuTitleText {
+        color: rgb(190, 190, 190);
+        font-weight: bold;
+      }
+      // 사이드메뉴_ 카테고리 추가버튼 아이콘
+      .sideMenuAddCategoryBtn{
+        zoom: 1.5;
+        color: rgb(253, 160, 72);
+        margin-top: -2px;
+      }
+     // 사이드메뉴_ 가족 영역_ 사진
+      .sideMenuFamilyPic {
+        margin-top: -10px;
+        padding-left: 15px;       
+      }
+
+     // 사이드메뉴_ 가족 영역_ 텍스트 영역 col (가족분류, 가족이름)
+      .sideMenuFamilyText {
+        margin-top: 10px;
+      }
+
+      // 사이드메뉴_ 가족 영역_ 가족분류 텍스트
+      .familyRelation {
+        margin-left: -10px;
+        font-weight: bold;
+
+      }
+      // 사이드메뉴_ 가족 영역_ 가족이름 텍스트
+      .familyName {
+        color: rgb(175, 175, 175);
+        font-weight: bold;
+      }
+      // 사이드메뉴_more 버튼
+      .moreBtn {
+        color: grey;
+        margin-right: 15px;
+        margin-top: 10px;
+      }

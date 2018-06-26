@@ -1,3 +1,72 @@
 page-review-main {
 
+
+/********************************************
+****************** 리뷰  ****************/
+
+/////////////// 관심 리뷰 //////////////
+       
+    // 관심 리뷰 타이틀 텍스트
+       .interestedReviewTitleTxt{
+      
+        margin-left: -20px;
+        background-color: white;
+        padding-bottom: 5px;
+      
+    }
+        // 모두 보기(공용 사용) 버튼
+          .viewAllBtn {
+            background-color: white;
+            color: black;
+            margin-left: -20px;
+        }
+
+       // 관심리뷰 Div
+       .interestedReviewDiv {
+        background-color: white;
+        margin-top: -10px;
+       }
+       // 관심리뷰 사진
+       .interestedReviewPic{
+        width: 130px;
+        height: 95px;
+    }
+        // 관심리뷰_ 별점 아이콘
+        .starIcon {
+            margin-left: -5px;
+        }
+        // 관심리뷰_ 좋아요 아이콘
+        .thumsIcon {
+            margin-left: 5px;
+        }
+
+///////////// 내 리뷰 카테고리 /////////////
+
+        // 카테고리 추가 & 조정 바
+        .categories {
+            background-color: white;
+            margin-top: 10px;
+        }
+
+        // 카테고리 추가 버튼
+        .addCategoryBtn {
+            zoom: 1.2;
+        }
+        // 카테고리 조정 버튼
+        .adjustCategoryBtn {
+            zoom: 1.2;
+            padding-right: 15px;
+        }
+
+        // 리뷰 카테고리 영역 Div
+        .reviewCategoryImgDiv {
+            margin-left: -5px;
+            margin-top: 10px;
+        }
+
+        // 리뷰 카테고리 이미지
+        .reviewCategoryPic {
+            width: 180px;
+            height: 135px;
+        }
 }

@@ -1,10 +1,26 @@
 page-add-review {
-    // 카테고리 추가 버튼
-    .addcategoryBtn {
-        text-align: right;
-        margin-top: -10px;
-        padding-right: 20px;
+
+    // 팝오버 영역
+    .popoverArea {
+        margin-left: -20px;
     }
+
+    // 게시글 저장할 카테고리 팝오버 버튼
+    .categoryPopBtn {
+        border-bottom : 1px solid rgb(199, 199, 199);
+        color: rgb(161, 161, 161);
+        font-size: 0.8em;
+        background-color: white;
+        height: 20px;
+    }
+
+// 카테고리 추가 버튼
+.addHistoryCategoryBtn {
+    text-align: right;
+    zoom: 1.2;
+    color: grey;
+  
+}
 
     // 게시글 본문 내용(텍스트, 이미지)  영역
     .boardContentsArea {
@@ -16,8 +32,19 @@ page-add-review {
      white-space: -o-pre-wrap; /* Opera 7 */
      word-break:break-all; word-wrap:break-word;
           }
-    ion-searchbar {
+    // ion-searchbar {
        
+    // }
+
+    
+    // 리뷰 게시글 제목
+    .boardTitleText {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    // 리뷰 게시글 본문
+    .boardContentsArea {
+        margin-top: 5px;
     }
 
     .modal-wrapper{

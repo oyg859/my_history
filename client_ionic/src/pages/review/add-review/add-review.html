@@ -32,22 +32,23 @@
         </h3>
       </ion-item>
     </ion-col>
-    <ion-col col-8>
-      <ion-item no-lines text-right>
-        <ion-label>카테고리 > 영화 </ion-label>
-        <ion-select interface="popover" [(ngModel)]="categories">
-
-          <div *ngFor="let category of categories;">
-            <ion-label>카테고리</ion-label>
-            <ion-option value="{{category.categoryName}}" class="card-title">{{category.categoryName}}</ion-option>
-          </div>
-        </ion-select>
-      </ion-item>
-    </ion-col>
+<!-- 게시글 저장할 카테고리 팝오버 버튼-->
+<ion-col col-8 text-right class="popoverArea">
+    <button ion-button class="categoryPopBtn" text-left clear no-padding no-lines>
+      <ion-label>카테고리: 영화</ion-label>
+      <ion-select interface="popover" [(ngModel)]="categories">
+        <div *ngFor="let category of categories;">
+          <ion-label>카테고리</ion-label>
+          <ion-option value="{{category.categoryName}}" class="card-title">{{category.categoryName}}</ion-option>
+        </div>
+      </ion-select>
+    </button>
+    &ensp;
+    <button ion-button class="addHistoryCategoryBtn" (click)="viewAddCategory()" no-padding clear no-lines>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+  </ion-col>
   </ion-row>
-  <div class="addcategoryBtn">
-    <button text-right ion-button (click)="viewAddCategory()">카테고리 추가</button>
-  </div>
 
   <ion-row>
     <ion-col col-8>
@@ -56,7 +57,7 @@
   (ionCancel)="onCancel($event)" [placeholder]="reviewItemPlaceHolder">
  </ion-searchbar>
 </ion-col>
-<ion-col col-4>
+<ion-col col-4 text-right>
     <button (click)="viewRating()" ion-button icon-start clear>
         <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1; margin-left: -10px; margin-top: 10px;"  name="ios-star"></ion-icon>
         <div style="color: grey;  font-size: 1.0em; padding-top:5px; margin-left: -8px;  margin-top: 10px;">&ensp;평가하기</div>
@@ -73,11 +74,11 @@
             </ion-item>-->
         <ion-item> 
 
-      <ion-textarea autosize rows="1"  formControlName="boardTitileForm" type="text" [placeholder]="boardTitlePlaceHolder" [(ngModel)]="boardTitle"></ion-textarea>
+      <ion-textarea class="boardTitleText" autosize rows="1"  formControlName="boardTitileForm" type="text" 
+      [placeholder]="boardTitlePlaceHolder" [(ngModel)]="boardTitle"></ion-textarea>
       </ion-item>
-      <ion-item>
-
-        <ion-textarea autosize rows="1" class="boardContentsArea" formControlName="boardContentForm" type="text" [placeholder]="boardContentPlaceHolder" [(ngModel)]="boardContent"
+      <ion-item no-lines>
+        <ion-textarea  autosize rows="1" class="boardContentsArea" formControlName="boardContentForm" type="text" [placeholder]="boardContentPlaceHolder" [(ngModel)]="boardContent"
           [class.error1]="!categoryBoardForm.controls.boardContentForm.valid
              && categoryBoardForm.controls.boardContentForm.dirty"></ion-textarea>
       </ion-item>

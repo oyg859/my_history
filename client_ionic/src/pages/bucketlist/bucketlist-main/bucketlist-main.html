@@ -1,0 +1,113 @@
+<ion-content>
+
+  <!-- 프로필 메인 백그라운드 div-->
+  <div class="appBackground">
+
+    <!-- 버킷리스트 D-DAY 영역 Div-->
+    <div class="bucketlistDdayDiv">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-calendar"></ion-icon>
+            <div style="color: grey;  font-size: 1.0em; ">&emsp;버킷 리스트 D-DAY</div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="viewMissionInfo()">
+            <p>모두 보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+      <hr>
+
+      <!-- 버킷리스트 진행 현황 -->
+      <div class="bucketlistInfo">
+        <span (click)="viewMissionInfo()">
+          살 8kg 빼기
+        </span>
+      </div>
+      <div class="bucketlistDday">
+        <span (click)="viewMissionInfo()">
+          3일 4시간 27분
+        </span>
+      </div>
+      &ensp; 남았습니다.
+    </div>
+
+
+    <!-- 미션 영역 Div -->
+    <div class="missionDiv">
+        <ion-row>
+          <ion-col col-9>
+            <button ion-button icon-start clear>
+              <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-clipboard"></ion-icon>
+              <div style="color: grey;  font-size: 1.0em; ">&emsp;미션</div>
+            </button>
+          </ion-col>
+          <ion-col col-3 text-right>
+            <button clear class="viewAllBtn" ion-button (click)="viewMissionInfo()">
+              <p>모두 보기</p>
+            </button>
+          </ion-col>
+        </ion-row>
+        <hr>
+  
+        <!-- 버킷리스트 진행 현황 -->
+        <div class="bucketlistInfo">
+          <span (click)="viewMissionInfo()">
+            건강을 위해 하루 물 1리터 마시기 &ensp; (12/20)
+          </span>
+        </div>
+        <ion-item no-lines text-center no-padding>
+            <ion-range class="progressStatusBar" [(ngModel)]="brightness">
+              <ion-icon range-right name="sunny"></ion-icon>
+            </ion-range>
+            
+          </ion-item>
+          <div class="progressStatus" text-center>65% 달성 </div>
+      </div>
+
+    <!-- 내 리뷰 카테고리 -->
+
+    <!-- 내 리뷰 카테고리 상단 바 (카테고리 추가 & 카테고리 조정) -->
+    <div class="categories">
+        <ion-row>
+          <ion-col col-9>
+            <strong style="font-size: 1.1em;">내 버킷리스트</strong>&emsp;
+            <span class="addCategoryBtn" (click)="viewAddCategory()">
+              <ion-icon name="add-circle"></ion-icon>
+            </span>
+          </ion-col>
+          <ion-col col-3 text-right>
+            <span class="adjustCategoryBtn" (click)="viewAdjustCategory()">
+              <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
+            </span>
+          </ion-col>
+        </ion-row>
+  
+        <!-- 내 버킷리스트 카테고리 -->
+        <div class="bucketlistCategoryImgDiv">
+        <ion-row>
+          <ion-col col-6 no-padding>
+            <img class="bucketlistCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMjcw/MDAxNTMwMDEwNzczMzAz.wc-rF9iqaV1gVtrt6rJ2sx5_QMxvHB6fg_LBp7ps054g.vs-fZkZ8KVqSjlCJimKi5Juwb-NMof9HctsReeZNOssg.PNG.oyg11/image.png?type=w773"
+            />
+          </ion-col>
+          <ion-col col-6 no-padding>
+            <img class="bucketlistCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMTU3/MDAxNTMwMDEwNzg5MTA5.j57mdbcOJ3BQQdTfF1f7G2RCISP0H4uzr4rZBtSOB1wg.uDlJmLdagiHDA1rplfQeRi1npS-_D61JVy-gFue-DB8g.PNG.oyg11/image.png?type=w773"
+            />
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 no-padding>
+            <img class="bucketlistCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMjgx/MDAxNTMwMDEwODcwMTk0.roO64iOfaRW-E1YLq9Mnc-t7MvNd9klBKorhxnKTbt8g.yjAIvvdKnlqRVjmB1pvnljlJ7PGWTlMbzKhiVpHYQ1Eg.PNG.oyg11/image.png?type=w773"
+            />
+          </ion-col>
+          <ion-col col-6 no-padding>
+            <img class="bucketlistCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMjY3/MDAxNTMwMDEwODgzMzY2.BGBFNi9OJWVBd8SGPTEbRrhJZxs6lDXOIOkEcZqZ-a8g.iHtYMmSzA9Aycx_YdkE6nFx7zGW2w5x-rMGQ3lLwv2Qg.PNG.oyg11/image.png?type=w773"
+            />
+          </ion-col>
+        </ion-row>
+      </div>
+      </div>
+  </div>
+</ion-content>

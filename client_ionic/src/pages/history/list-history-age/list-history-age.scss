@@ -1,0 +1,62 @@
+page-list-history-age {
+    // 나이(연도) 리스트 바
+    .ageListBar {
+        position: relative;
+        background-color: rgb(8, 44, 73);
+        color: white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 15px;
+        margin-bottom: 1px;
+        background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMzAg/MDAxNTI5NTYwNzQ1OTc0.3fRn5DPPmcuq2YeRV9iq-1jMzb24OMKJrr6a2dbeZJUg.gHy-zPfc1LZf2lv_zwXSVv5Y57z2dyj57mieLqegGDUg.JPEG.oyg11/%ED%94%84%EB%A1%9C%ED%95%84_%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%B0%B0%EA%B2%BD%EC%83%89.jpg?type=w773");
+    }
+     // 연도 리스트바_ 이미지 편집
+    .historyAgeBarImg {
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        font-size: 1.5em;
+        width: 5px;
+        height: 5px;
+        background-color: rgb(59, 59, 59);
+        opacity: 0.7;
+        color: #fff;
+    } 
+
+    // 연도 리스트바_ 나이 텍스트
+    .ageText {
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+    // 연도 리스트바_ 그외 텍스트 (연도, 이미지 수)
+    .otherText {
+        padding-top: 4px;
+        color: rgb(226, 226, 226);
+    }
+    // 연도 리스트바_ 아코디언 아이콘
+    .accordianIcon {
+        padding-top: 10px;
+    }
+
+    
+
+    // 이미지의 히스토리 정보 (날짜, 이미지 수, 위치)
+    .imgHistoryInfo {
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        color: rgb(185, 184, 184);
+    } 
+    // 히스토리 이미지 묶음 영역
+    .historyImgRow {
+        margin-bottom: 20px;
+    }
+
+    // 히스토리 이미지
+    .historyImg {
+        padding-left: 1px;
+        padding-bottom: 1px;
+    } 
+
+}

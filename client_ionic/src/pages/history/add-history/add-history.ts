@@ -34,7 +34,7 @@ export class AddHistoryPage {
   // 히스토리 추가 "완료" 버튼 활성/비활성 체크
    isenabled:boolean = false;
 
-  boardTitlePlaceHolder:string = "제목 (입력 선택)"
+  boardTitlePlaceHolder:string = "히스토리 제목 (입력 선택)"
   boardContentPlaceHolder:string = "어떠한 일이 있었나요?"
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
@@ -63,5 +63,6 @@ export class AddHistoryPage {
     
   }
 
+  
 }
 ``

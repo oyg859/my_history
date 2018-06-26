@@ -1,17 +1,64 @@
 <ion-header>
-  <ion-navbar class="topToolbar" color="dark">
-    <ion-segment class="toolbarSegmentBtn" [(ngModel)]="mypageTab">
+  <ion-navbar>
+    <ion-row>
+       <!-- <ion-col col-4 class="topNavBar"  >
+        <button ion-button   class="topNavPeopleBtn" icon-start clear small (click)="openMenu()">
+          <ion-icon class="categoryHeaderEditImg" name="ios-people"></ion-icon>
+        </button>
+      </ion-col> -->
+
+    <!-- 상단 슬라이드 메뉴 -->
+    <!-- <ion-header>
+      <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="ios-menu"></ion-icon>
+        </button>
+        <ion-title>메뉴</ion-title>
+      </ion-navbar>
+    </ion-header> -->
+    <ion-col col-4 class="topNavBar"  >
+    <button ion-button menuToggle icon-start clear side="right" class="topNavPeopleBtn">
+      <ion-icon name="ios-people"></ion-icon>
+    </button>
+  
+  </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavDesignBtn" icon-start clear small (click)="addCategory()">
+          <ion-icon class="categoryHeaderEditImg" name="ios-color-palette"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavNoticeBtn" icon-start clear small (click)="addCategory()" >
+          <ion-icon class="categoryHeaderEditImg" name="ios-notifications"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavSearchBtn" icon-start clear small (click)="addCategory()">
+          <ion-icon class="categoryHeaderEditImg" name="ios-search"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavSettingBtn" icon-start clear small (click)="addCategory()">
+          <ion-icon class="categoryHeaderEditImg" name="ios-settings"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+
+  <ion-navbar class="topToolbar" color="blueCustom2">
+    <ion-segment style="font-weight: bold; " class="toolbarSegmentBtn" [(ngModel)]="mypageTab">
       <ion-segment-button value="history">
-        <span style="font-size: 1.2em;">히스토리</span>
+        <span style="font-size: 1.2em; font-weight: bold;">히스토리</span>
       </ion-segment-button>
       <ion-segment-button value="location">
-        <span style="font-size: 1.2em;">위치</span>
+        <span style="font-size: 1.2em; font-weight: bold;">장소</span>
       </ion-segment-button>
       <ion-segment-button value="review">
-        <span style="font-size: 1.2em;">리뷰</span>
+        <span style="font-size: 1.2em; font-weight: bold;">리뷰</span>
       </ion-segment-button>
       <ion-segment-button value="blist">
-        <span style="font-size: 1.2em;">버킷리스트</span>
+        <span style="font-size: 1.2em; font-weight: bold;">버킷리스트</span>
       </ion-segment-button>
     </ion-segment>
   </ion-navbar>
@@ -34,326 +81,28 @@
       </button>
     </ion-fab-list>
   </ion-fab>
-
-  <div [ngSwitch]="mypageTab">
-
-    <!--  히스토리 메뉴 -->
-    <!--                -->
-    <div *ngSwitchCase="'history'">
-        <ion-nav [root]="detail1"></ion-nav>
-      <!-- 프로필 상단 대형 헤더 이미지-->
-      <div class="profileHeaderImg">
-        <img style="width:100%; height:150px;" class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
-      </div>
-      <!-- 프로필 메인 백그라운드 div-->
-      <div class="appBackground">
-
-        <!-- 히스토리 디자인 / 히스토리 "편집" 버튼  -->
-        <ion-row>
-          <ion-col padding>
-            <button class="profileDesignBtn" ion-button (click)="doLogout()" round>
-              <ion-icon md="md-brush"> &nbsp;디자인</ion-icon>
-            </button>
-          </ion-col>
-          <ion-col padding text-right>
-            <button class="profileEditBtn" ion-button (click)="doLogout()" round>
-              <ion-icon md="ios-build"> &nbsp;편집</ion-icon>
-            </button>
-          </ion-col>
-
-        </ion-row>
-
-        <!-- 프로필 메인 사진 & 프로필 메인 정보 통합틀-->
-        <div class="profileMainDiv">
-          <ion-row>
-            <ion-col>
-              <ion-avatar padding>
-                <img class="mainProfileImage" src="http://ionicframework.com/img/docs/mcfly.jpg">
-              </ion-avatar>
-            </ion-col>
-            <ion-col>
-              <div class="profileMainInfo">
-                <strong>
-                  <h5>마크 정</h5>
-                </strong>
-                <div>출생 &emsp; {{birthDay}}</div>
-                <div>거주지 &nbsp; {{address}}</div>
-                <div>좋아하는 것 &nbsp; {{like}} </div>
-                <div>직업 &nbsp; {{job}}</div>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-
-        <!-- 친구추가 / 팔로우 / 인생 사전 버튼 -->
-        <ion-card class="profileSocialbar">
-          <ion-row center text-center>
-
-            <ion-col>
-              <ion-icon class="profilesocialbarBtn" md="md-person-add" (click)="addFriend()"></ion-icon>
-              <div>친구 추가</div>
-            </ion-col>
-            <ion-col>
-              <ion-icon class="profilesocialbarBtn" md="md-people" (click)="addFollow()"></ion-icon>
-              <div>팔로우</div>
-            </ion-col>
-            <ion-col>
-              <ion-icon class="profilesocialbarBtn" md="ios-information-circle-outline" (click)="viewHistoryDic()"></ion-icon>
-              <div>인생 사전</div>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-
-        <!-- 프로필 상세 내용 (유저작성 문장) -->
-        <ion-card>
-          <ion-row padding>
-            <p class="profileMainTitle">
-              <strong>나보다 다른 사람이 우선</strong>
-            </p>
-            <p class="profileMaintextDetail">
-              강원도 양양에서 5남 3녀 중, 장녀로 태어났으며,7살에 초등학교에 입학.
-              <br> 중학교때는 문예창작에 관심을 가져 동아리 활동을 시작하여18살에 여류작가로 데뷔. 20세에 서울로 상경 후 서울 출판사에 취직. 23세에 결혼하여 5명의 자식을 낳았으며, 이후 35세에 출판
-              대상 수상하여 후배 양성을 시작하였다.
-              <br> 좋아하는 음식은 곶감이며, 사람들과 화목하게 지내는 것을 무엇보다 가장 중요시 한다.
-              <br> 58세에 양로원 자원봉사 시작. 65세에 무료 양로원인 행복원을 설립하여 어려운 노인들을 돕기 시작. 최근에도 여러가지 자원봉사에 매진하고 있다.
-            </p>
-          </ion-row>
-        </ion-card>
-        <!-- 나이별 히스토리 -->
-        <ion-card>
-          <ion-row>
-            <ion-col col-9>
-              <p class="categories">
-                <strong> {{userName}} 님의 히스토리</strong>
-              </p>
-            </ion-col>
-            <ion-col col-3 text-right>
-              <button class="viewAllBtn" ion-button (click)="doLogout()">
-                <p>모두 보기</p>
-              </button>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p></p>
-            </ion-col>
-
-          </ion-row>
-        </ion-card>
-
-        <!-- 친구 목록 -->
-        <ion-card>
-          <ion-row>
-            <ion-col col-9>
-              <p class="categories">
-                <strong> {{userName}} 님의 친구&emsp;</strong>{{friendsNumber}}명</p>
-            </ion-col>
-            <ion-col col-3 text-right>
-              <button class="viewAllBtn" ion-button (click)="doLogout()">
-                <p>모두 보기</p>
-              </button>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p>김성철</p>
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p>Chen</p>
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p>Camela</p>
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p>Mark</p>
-            </ion-col>
-            <ion-col no-padding>
-              <img class="profileHistoryPic" src="http://ionicframework.com/img/docs/mcfly.jpg" />
-              <p>이종운</p>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-        <ion-card>
-          <ion-row>
-            <ion-col col-9>
-              <p class="categories">
-                <strong>저장된 인생</strong>&emsp;
-                <span class="addCategoryBtn" (click)="viewAddCategory()">
-                  <ion-icon name="add-circle"></ion-icon>
-                </span>
-              </p>
-            </ion-col>
-            <ion-col col-3>
-              <p>
-                <span class="addCategoryBtn" (click)="viewAdjustCategory()">
-                  <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
-                </span>
-              </p>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="col-categories" no-padding>
-              <ion-list>
-                <div *ngFor="let category of categories; let i=index">
-                  <ion-card>
-                    <button class="cardCategoryImage" no-padding ion-button (click)="doLogout()">
-                      <img src="https://i.ytimg.com/vi/IudAEMPxoM8/maxresdefault.jpg" />
-                      <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
-                      <div class="card-title">{{category.categoryName}}</div>
-                      <div class="card-subtitle">31 포스트</div>
-                      <!-- </button> -->
-                    </button>
-                  </ion-card>
-
-                </div>
-              </ion-list>
-              <!-- </ion-scroll> -->
-            </ion-col>
-          </ion-row>
-        </ion-card>
-
-        <ion-item>
-          <strong>히스토리 게시글</strong>
-        </ion-item>
-        <ion-list *ngFor="let content of contents">
-          <!-- <ion-card> -->
-          <ion-row>
-            <ion-col col-5 no-padding>
-              <ion-item>
-                <ion-avatar item-start>
-                  <img src="http://ionicframework.com/img/docs/mcfly.jpg">
-                </ion-avatar>
-                <h3>
-                  <strong>{{content.userName}}</strong>
-                </h3>
-                <p>30분전</p>
-              </ion-item>
-            </ion-col>
-            <ion-col class="boardlocationInfoCol" col-5 no-padding>
-              <ion-item class="boardlocationInfoText" no-lines>
-                <ion-icon name="ios-pin"></ion-icon>
-                강서구 화곡동
-                <p></p>
-              </ion-item>
-            </ion-col>
-            <ion-col class="boardsideMenu" col-2 no-padding>
-              <ion-item text-right no-lines>
-                <ion-icon md="md-more"></ion-icon>
-                <p></p>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <img class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
-
-          <ion-item text-left>
-            <div>
-              <strong>{{content.title}}</strong>
-            </div>
-            <div class="boardContentsArea">
-              Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!Whoa. This
-              is heavy.
-            </div>
-          </ion-item>
-          <!-- 해시 태그 -->
-          <ion-item class="hashTag">
-            <p>{{hashTag}} &emsp; +12명 관심</p>
-          </ion-item>
-
-          <!-- 댓글 -->
-          <ion-item class="replyText">
-            <strong>정순철</strong> &emsp; 벌써 오래전이구나~! 세월빠르네 ㅠ
-          </ion-item>
-
-
-          <ion-row class="boardSelectBtn">
-            <ion-col>
-              <button ion-button icon-start clear>
-                <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
-                <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button icon-start clear>
-                <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
-                <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button icon-start clear>
-                <!-- <button ion-button icon-start clear small> -->
-                <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
-                <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
-              </button>
-            </ion-col>
-          </ion-row>
-
-          <!-- </ion-card> -->
-        </ion-list>
-
-
-        <!-- 게시글이 있다면..  -->
-        <!-- <ion-item *ngif="history_index"> -->
-        <!-- for 문으로 게시글 출력-->
-        <ion-item>
-          <span>프로필 이미지</span>
-          <span> {{userName}} </span>
-          <span> 작성일시</span>
-          <span> 발생 장소</span>
-          <span> 게시글별 수정/삭제 메뉴</span>
-        </ion-item>
-        <ion-item>
-          제목
-        </ion-item>
-        <ion-item>
-          본문 & 사진
-        </ion-item>
-        <ion-item>
-          해시태그
-        </ion-item>
-        <!-- 댓글이 있다면 댓글 출력-->
-        <ion-item>
-          댓글
-        </ion-item>
-        <ion-item>
-          <span>좋아요수</span>
-          <span>댓글수</span>
-          <span>공유수</span>
-        </ion-item>
-
-        <!-- </ion-item> -->
-        <!-- 게시글이 없다면 게시글 입력 유도 메시지 출력 -->
-      </div>
-    </div>
-    <div *ngSwitchCase="'location'">
-        <ion-nav [root]="detail2"></ion-nav>
   
+  <ion-slides pager>
+  <div [ngSwitch]="mypageTab">
+ 
+      <!--  히스토리 메뉴 -->
+      <!--                -->
+      <div *ngSwitchCase="'history'">
+        <ion-nav [root]="historyMain"></ion-nav>
       </div>
-
+      <div *ngSwitchCase="'location'">
+        <ion-nav [root]="locationMain"></ion-nav>
+      </div>
+  
       <div *ngSwitchCase="'review'">
-        리뷰 목록
-
-        <button ion-button (click)="doLogout()" style="width: 300px; height: 50px;">로그아웃</button>
+        <ion-nav [root]="reviewMain"></ion-nav>
       </div>
+      <!-- <button ion-button (click)="doLogout()" style="width: 300px; height: 50px;">로그아웃</button>
+       -->
       <div *ngSwitchCase="'blist'">
-        버킷리스트 목록
+          <ion-nav [root]="bucketlistMain"></ion-nav>
       </div>
-    </div>
 
-</ion-content>
+  </div>
+</ion-slides>
+  </ion-content>

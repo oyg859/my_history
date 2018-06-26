@@ -1,18 +1,128 @@
-<!--
-  Generated template for the ReviewMainPage page.
+<ion-content >
+  <!-- 프로필 메인 백그라운드 div-->
+  <div class="appBackground">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+    <!--방문한 지역 타이틀 텍스트 -->
+    <div class="interestedReviewTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em;  padding-top:1px;">
+           <strong> &emsp;관심 리뷰</strong></div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>모두 보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
 
-  <ion-navbar>
-    <ion-title>reviewMain</ion-title>
-  </ion-navbar>
+    <!-- 방문한 지역_최근 방문 지역 Div -->
+    <div class="interestedReviewDiv">
+      <ion-row>
+        <ion-col>
+          <img class="interestedReviewPic" src="https://blogfiles.pstatic.net/MjAxODA2MjBfMjk3/MDAxNTI5NDc2MjYyMjY5.zcvskav3SF2s59PZi8n8iKm8Mk7JDiPNAg-On8hIKgIg.9XMwFZ50ETQDHpXAYTdKcJmUk5AojXKsULJQXFLuy5wg.PNG.oyg11/cometic3.png?type=w1"
+          />
+          <div>
+            <strong>Dior 쟈도르</strong>
+          </div>
+          <ion-row>
+            <ion-col class="starIcon" col-5>
+              <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+              <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">
+                &ensp;4.2</span>
+            </ion-col>
+            <ion-col class="thumsIcon" col-7>
+              <ion-icon style="color: rgb(173, 173, 173); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+              &nbsp; 235
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <img class="interestedReviewPic" src="https://blogfiles.pstatic.net/MjAxODA2MjBfMTYz/MDAxNTI5NDc2MjU2OTgy.s4AG3qr9jyQCXziAI6YVpKtG2utTAJypx2v2O5yR2xQg.bbF_nFeOyGEw3ttwAAvr7by_xZLu99u9e-_SG7V4GF4g.PNG.oyg11/coco.png?type=w1"
+          />
 
-</ion-header>
+
+          <div>
+            <strong>코코</strong>
+          </div>
+          <ion-row>
+            <ion-col class="starIcon" col-5>
+              <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+              <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">
+                &ensp;4.5</span>
+            </ion-col>
+            <ion-col class="thumsIcon" col-7>
+              <ion-icon style="color: rgb(173, 173, 173); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+              &nbsp; 5,190
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <img class="interestedReviewPic" src="https://blogfiles.pstatic.net/MjAxODA2MjBfODQg/MDAxNTI5NDc2MjY3MzYx.QzkAxNGiZsh2_8_ZcwoQrAihVk3sFbGdgMaSuVzkeokg.6fTlDhZTkxBZZBC06nIIhYJQmy8g9ZLDF_7SvXgD4gIg.PNG.oyg11/ramen.png?type=w1"
+          />
+          <div>
+            <strong>농심 감자탕면</strong>
+          </div>
+          <ion-row>
+            <ion-col class="starIcon" col-5>
+              <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+              <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">
+                &ensp;3.8</span>
+            </ion-col>
+            <ion-col class="thumsIcon" col-7>
+              <ion-icon style="color: rgb(173, 173, 173); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+              &nbsp; 79
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
 
 
-<ion-content padding>
+    <!-- 내 리뷰 카테고리 -->
 
+    <!-- 내 리뷰 카테고리 상단 바 (카테고리 추가 & 카테고리 조정) -->
+    <div class="categories">
+      <ion-row>
+        <ion-col col-9>
+          <strong style="font-size: 1.1em;">내 리뷰 카테고리</strong>&emsp;
+          <span class="addCategoryBtn" (click)="viewAddCategory()">
+            <ion-icon name="add-circle"></ion-icon>
+          </span>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <span class="adjustCategoryBtn" (click)="viewAdjustCategory()">
+            <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
+          </span>
+        </ion-col>
+      </ion-row>
+
+      <!-- 내 리뷰 카테고리 이미지 -->
+      <div class="reviewCategoryImgDiv">
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <img class="reviewCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjBfMjcg/MDAxNTI5NDc2ODY5NTky.tZsQua70ObonykCiouC7LI1psMoX6cIC-OkzpR1m0Isg.xp65C2Mo6bKhmU7cZ-pzK82ZF0xQJI3vycc6aXx-rAAg.PNG.oyg11/image.png?type=w773"
+          />
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <img class="reviewCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjBfODQg/MDAxNTI5NDc2ODg2MjA1.vs6ZPTjLJAlBVJMsEMA6P07jnlgLy43KGVp46pUN0SIg.VPVQrpug3MRf_LGFlMSF2HjSSgdzLmpfCJR57kKOQBAg.PNG.oyg11/image.png?type=w773"
+          />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <img class="reviewCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjBfMTE2/MDAxNTI5NDc3NDUzMjY4.Qm03dDp5XtvGI2qxJr4-zk23KQtxV_oae1DJBEZBB70g.w1DzWgQjYeN_CjLx_8Q0Ads_UjlyJigL-MKmT87JgkQg.PNG.oyg11/image.png?type=w773"
+          />
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <img class="reviewCategoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjBfMTIz/MDAxNTI5NDc2OTE0Nzk5.JoAJjxIbncLYufOLFgw8f_rVP6BhY6SJcckLRx579PIg.42PEFP_zdlczLIQdf1QwZ2cMUiQfjeLFRzDyKPe1Yfgg.PNG.oyg11/image.png?type=w773"
+          />
+        </ion-col>
+      </ion-row>
+    </div>
+    </div>
+  </div>
 </ion-content>

@@ -1,22 +1,89 @@
 page-add-history {
-    // 카테고리 추가 버튼
-    .addcategoryBtn {
-        text-align: right;
-        margin-top: -10px;
-        padding-right: 20px;
+
+    // 팝오버 영역
+    .popoverArea {
+        margin-left: -20px;
     }
 
-// 게시글 본문 내용(텍스트, 이미지)  영역
-.boardContentsArea {
-    // 줄바꿈 코드
-     word-wrap: break-word; /* Internet Explorer 5.5+ */
-     white-space: pre-wrap; /* css-3 */
-     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-     white-space: -pre-wrap; /* Opera 4-6 */
-     white-space: -o-pre-wrap; /* Opera 7 */
-     word-break:break-all; word-wrap:break-word;
-          }
+    // 게시글 저장할 카테고리 팝오버 버튼
+    .categoryPopBtn {
+        border-bottom : 1px solid rgb(199, 199, 199);
+        color: rgb(161, 161, 161);
+        font-size: 0.8em;
+        background-color: white;
+        margin-left: 10px;
+        height: 20px;
+    }
 
+    // 카테고리 추가 버튼
+    .addHistoryCategoryBtn {
+        text-align: right;
+        zoom: 1.2;
+        color: grey;
+    }
 
+    // 게시글 본문 내용(텍스트, 이미지)  영역
+    .boardContentsArea {
+        // 줄바꿈 코드
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-break:break-all; word-wrap:break-word;
+        border-bottom: none;
+     }
 
+     // 히스토리 일시_ 텍스트
+     .historyDateText,  {
+         margin-top: 15px;
+         margin-left: 20px;
+     }
+     
+     // 히스토리 일시_ 일시 선택 버튼 영역 Div
+    //  .historyDateBtnDiv{
+        
+    //  }
+
+     // 히스토리 일시_ 일시선택 버튼
+     .historyDateBtn {
+         background-color: white;
+         color: grey;
+         width: 120px;
+     }
+
+     // 히스토리 일시_ 기간 추가+ 버튼
+     .historyDateAddBtn {
+        background-color: rgb(238, 235, 235);
+        color: rgb(168, 166, 166);
+    }
+    
+     // 
+     .historyLocationText {
+        margin-top: 20px;
+        margin-left: 20px;
+
+     }
+
+     // 히스토리 발생 위치_ 현재위치 버튼
+     .historyLocationBtn {
+        background-color: white;
+        color: grey;
+    }
+
+     // 히스토리 발생 위치_ 위치검색 버튼
+     .historyLocationSearchBtn {
+        background-color: rgb(238, 235, 235);
+        color: rgb(168, 166, 166);
+    }
+
+    // 히스토리 제목
+    .boardTitleText {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    // 히스토리 본문 
+    .boardContentsArea {
+        margin-top: 5px;
+    }
 }

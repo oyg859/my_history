@@ -1,1 +1,120 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+
+
+
+<ion-menu side="left" persistent="true" [content]="myContent">
+
+    <!-- <button color="dark" ion-button side="right"  (click)="openMenu()">
+        <ion-icon class="categoryHeaderEditImg" name="ios-people"></ion-icon>
+      </button> -->
+    <ion-content>
+          <!-- 프로필 상단 대형 헤더 이미지-->
+          <button class="sideMenuProfileHeaderImgBtn" no-padding ion-button (click)="doLogout()">
+                <img style="width:100%; height:150px;" class="full-image" src="https://postfiles.pstatic.net/MjAxODA2MjFfMjc2/MDAxNTI5NTUyODM0ODM1.yt9YeHeW8xFakojinuH3Bc1Tb_kDTgkZR7VxPk2QClQg.XLn1QrBgh8yAYeQwT3JwnVtTrPAavB9L00TOO-WKzKMg.PNG.oyg11/image.png?type=w773">
+                <button class="sideMenuProfileHeaderEditImg" padding ion-button (click)="viewEditProfileHeaderImg()">
+                    <ion-icon name="ios-camera-outline"></ion-icon>
+                </button>
+                <!-- 사이드 메뉴 닫기 버튼 -->
+                <button menuClose class="sideMenuHeaderCloseBtn" padding ion-button (click)="closeSideMenu()">
+                        <ion-icon name="ios-close-circle-outline"></ion-icon>
+                </button>
+            </button>
+        <ion-list>
+            <div class="sideMenuDesignBtnDiv">
+                <button ion-button icon-start clear>
+                    <ion-icon class="sideMenuTopNavDesignBtn" name="ios-color-palette"></ion-icon>
+                    <div class="sideMenuTopNavDesignText">&emsp;디자인 테마 선택</div>
+                </button>
+            </div>
+            <hr>
+            <!-- *********** 가족 ********** -->
+            <div>
+            <button ion-button icon-start clear>
+                <div class="sideMenuTitleText">가족</div> &emsp;
+                <ion-icon class="sideMenuAddCategoryBtn" name="ios-add-circle-outline"></ion-icon>
+            </button>
+            <ion-list>
+                <ion-row>
+                    <ion-col col-3 class="sideMenuFamilyPic">
+                        <ion-item no-padding>
+                            <ion-avatar item-start>
+                                <img src="http://ionicframework.com/img/docs/mcfly.jpg">
+                            </ion-avatar>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-7 class="sideMenuFamilyText">
+                        <span class="familyRelation">나</span>
+                        <span class="familyName">&emsp; 마크 정</span>
+                    </ion-col>
+                    <ion-col col-2>
+                        <div class="moreBtn" text-right>
+                            <ion-icon md="md-more"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-3 class="sideMenuFamilyPic">
+                        <ion-item no-padding>
+                            <ion-avatar item-start>
+                                <img src="http://ionicframework.com/img/docs/mcfly.jpg">
+                            </ion-avatar>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-7 class="sideMenuFamilyText">
+                        <span class="familyRelation">우리 엄마</span>
+                        <span class="familyName">&emsp; 김복례</span>
+                    </ion-col>
+                    <ion-col col-2>
+                        <div class="moreBtn" text-right>
+                            <ion-icon md="md-more"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-3 class="sideMenuFamilyPic">
+                        <ion-item no-padding>
+                            <ion-avatar item-start>
+                                <img src="http://ionicframework.com/img/docs/mcfly.jpg">
+                            </ion-avatar>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-7 class="sideMenuFamilyText">
+                        <span class="familyRelation">예쁜 딸 아기</span>
+                        <span class="familyName">&emsp; 이새롱</span>
+                    </ion-col>
+                    <ion-col col-2>
+                        <div class="moreBtn" text-right>
+                            <ion-icon md="md-more"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+            </div>
+            <div class="sideMenuFamilyBottomLine">
+            <hr></div>
+
+            <!-- *********** 카테고리 ************ -->
+
+            <button ion-button icon-start clear>
+                <div class="sideMenuTitleText">카테고리</div> &emsp;
+                <ion-icon class="sideMenuAddCategoryBtn" name="ios-add-circle-outline"></ion-icon>
+            </button>
+
+            <button ion-item>
+                연도별 인생
+            </button>
+            <button ion-item>
+                최고의 순간
+            </button>
+            <button ion-item>
+                여행기
+            </button>
+            <button ion-item>
+                소중한 추억
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #myContent swipeBackEnabled="false"></ion-nav>
+
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->

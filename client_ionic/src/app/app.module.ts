@@ -33,6 +33,11 @@ import { AddRatingPage } from '../pages/common/add-rating/add-rating';
 import { HistoryMainPage } from '../pages/history/history-main/history-main';
 import { LocationMainPage } from '../pages/location/location-main/location-main';
 import { ReviewMainPage } from '../pages/review/review-main/review-main';
+import { ListHistoryAgePage } from '../pages/history/list-history-age/list-history-age';
+import { TabsHomeMainPage } from '../pages/tabs/tabs-home-main/tabs-home-main';
+import { TabsLocationMainPage } from '../pages/tabs/tabs-location-main/tabs-location-main';
+import { TabsReviewMainPage } from '../pages/tabs/tabs-review-main/tabs-review-main';
+import { BucketlistMainPage } from '../pages/bucketlist/bucketlist-main/bucketlist-main';
 
 
 @NgModule({
@@ -52,7 +57,12 @@ import { ReviewMainPage } from '../pages/review/review-main/review-main';
     AddRatingPage,
     HistoryMainPage,
     LocationMainPage,
-    ReviewMainPage
+    ReviewMainPage,
+    BucketlistMainPage,
+    ListHistoryAgePage,
+    TabsHomeMainPage,
+    TabsLocationMainPage,
+    TabsReviewMainPage
   ],
   imports: [ 
     IntroPageModule,
@@ -60,7 +70,14 @@ import { ReviewMainPage } from '../pages/review/review-main/review-main';
     LoginPageModule,
     HttpClientModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp
+    IonicModule.forRoot(MyApp, {
+      menuType: 'push',
+      platforms: {
+        ios: {
+          menuType: 'overlay',
+        }
+      }
+    }
     //  , {},
     //    {
     //   // url 라우터 딥링크 설정 (서버에서 주소로 호출시 해당하는 html 로 이동. 현재 적용 안되는 코드)
@@ -86,7 +103,12 @@ import { ReviewMainPage } from '../pages/review/review-main/review-main';
     AddRatingPage,
     HistoryMainPage,
     LocationMainPage,
-    ReviewMainPage
+    ReviewMainPage,
+    BucketlistMainPage,
+    ListHistoryAgePage,
+    TabsHomeMainPage,
+    TabsLocationMainPage,
+    TabsReviewMainPage
   ],
   providers: [
     StatusBar,

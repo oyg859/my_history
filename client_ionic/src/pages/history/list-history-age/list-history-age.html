@@ -1,0 +1,86 @@
+<!--
+  Generated template for the ListHistoryAgePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar color="brownCustom1">
+    <ion-row>
+      <ion-col col-8>
+        <h5 class="topTitleBarText">연도별 히스토리</h5>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <button ion-button class="titlebarDoneBtn" icon-start clear small (click)="addCategory()">검색
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item no-lines>
+    <strong> {{userName}} 님의 역사</strong>
+  </ion-item>
+
+  <!-- 연도별 사진 목록 -->
+  <ion-list> 
+    <div *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <div class="ageListBar" style='background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMjc2/MDAxNTI5NTUyODM0ODM1.yt9YeHeW8xFakojinuH3Bc1Tb_kDTgkZR7VxPk2QClQg.XLn1QrBgh8yAYeQwT3JwnVtTrPAavB9L00TOO-WKzKMg.PNG.oyg11/image.png?type=w773");'>
+        <ion-row>
+          <ion-col col-3>
+            <div class="ageText">{{d.age}}</div>
+          </ion-col>
+          <ion-col col-8>
+            <div class="otherText"> &emsp; {{d.year}}  &emsp; {{d.imgCount}}
+            </div>
+          </ion-col>
+          <ion-col col-1 class="accordianIcon">
+              <ion-icon text-right item-right [name]="isGroupShown(i) ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
+          </ion-col>
+          <button class="historyAgeBarImg" padding ion-button (click)="viewEditProfileHeaderImg()">
+              <ion-icon name="ios-camera-outline"></ion-icon>
+          </button>
+        </ion-row>
+      </div>
+
+      <div *ngIf="isGroupShown(i)">
+        <div class="imgHistoryInfo">
+          2월 7일 &ensp; (13) &emsp;
+          <ion-icon class="categoryHeaderEditImg" name="ios-pin"></ion-icon>서울 강서구 화곡동 외 5장소
+        </div>
+        <div class="historyImgRow">
+          <ion-row>
+              <ion-col no-padding>
+                  <img class="historyImg"  src={{d.imgUrl}} />
+               
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src={{d.imgUrl}} />
+                
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src={{d.imgUrl}} />
+            
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src={{d.imgUrl}} />
+          
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src={{d.imgUrl}} />
+               
+                </ion-col>
+
+          </ion-row>
+        </div>
+      </div>
+
+    </div>
+  </ion-list>
+
+
+</ion-content>

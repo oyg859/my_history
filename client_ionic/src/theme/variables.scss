@@ -36,15 +36,17 @@ $app-direction: ltr;
 $colors: (
   
   //primary:   (base: #488aff, contrast: yellow),
-  primary:   (base: #7FDBFF, contrast: white),
+  primary:   (base: rgb(82, 186, 255), contrast: white),
+  primaryReverse:   (base: white, contrast: rgb(41, 18, 12)),
    secondary:  #32db64,
    danger:     #f53d3d,
    light:      #f4f4f4,
    dark:       #222,
-   navy:  	#000080,
+   navy:  	#181e57,
    indigo:   #4B0082,
    blueCustom1: rgb(17, 155, 235),
-   greenCustom1: #41A435,
+   blueCustom2: (base: rgb(28, 44, 65), contrast: white),
+   greenCustom1: rgb(21, 180, 68),
    brownCustom1: #523C33
 );
 

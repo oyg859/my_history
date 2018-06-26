@@ -1,3 +1,235 @@
 page-history-main {
 
+/********************************************
+****************** 히스토리 ****************/
+
+      // 프로필 최상단 헤더 이미지
+      .profileHeaderImgBtn {
+        margin-top: -10px;    
+        display:block;
+        width: 100%;
+        height: 140px;
+   
+    }
+
+    // 프로필 헤더 이미지 수정버튼
+    .profileHeaderEditImg {
+        position: absolute;
+        top: 71%;
+        left: 89%;
+        font-size: 2.0em;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(59, 59, 59);
+        opacity: 0.7;
+        color: #fff;
+    }
+
+    
+
+    // 히스토리 메인 정보영역 Div
+    .historyMainInfoDiv {
+        background-color: white;
+       // background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMzAg/MDAxNTI5NTYwNzQ1OTc0.3fRn5DPPmcuq2YeRV9iq-1jMzb24OMKJrr6a2dbeZJUg.gHy-zPfc1LZf2lv_zwXSVv5Y57z2dyj57mieLqegGDUg.JPEG.oyg11/%ED%94%84%EB%A1%9C%ED%95%84_%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%B0%B0%EA%B2%BD%EC%83%89.jpg?type=w773");
+    }
+
+      // 프로필 디자인 버튼 
+      .profileDesignBtn {
+          background-color: rgb(252, 135, 39);
+          color: yellow;
+          margin-left: -1px;
+          font-size: 0.9em;
+          
+      }
+      // 프로필 "편집" 로우
+      .profileEditBtnRow {
+        padding-top: -30px;
+        margin-top: -20px;
+        font-size: 0.9em;
+        text-align: right;
+      }
+
+      // 프로필 "편집" 버튼 
+      .profileEditBtn {
+        background-color: rgba(128, 128, 128, 0);
+        border: 1px solid rgb(148, 148, 148);
+        color: grey;
+        font-size: 0.9em;
+        margin-top: -5px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    //    border: 0.5px solid grey;
+      }
+
+      // 프로필 대표 이미지 / 메인 정보 통합틀 Div
+      .profileMainDiv {
+          margin-top : -5px;
+          background-image: url("https://postfiles.pstatic.net/MjAxODA2MjZfNDgg/MDAxNTMwMDA0NzM5NDY1.eaXzadSIzCQ0UJwmzgGHqMGAEFRS_yTwZvA0hY6TOsgg.4elp4ZFwGaQaHfZJIWNdGOG9HKJ6_aOYVnXsGvcJwO8g.JPEG.oyg11/desktop-3246124__340.jpg?type=w773");
+          background-size : 100% 100%;   
+      }
+
+
+     // 프로필 대표 이미지
+      .mainProfileImage {
+          //border: 5px solid white;
+          width: 120px;
+          height: 120px;
+          margin-left: -5px; 
+          //box-shadow: 1px 1px 1px 1px  rgb(233, 233, 233);
+      }
+    // 프로필 메인 이미지 수정버튼
+    .profileMainEditImg {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        font-size: 2.0em;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(80, 66, 66);
+        opacity: 0.7;
+        color: #fff;
+    }
+
+      // 프로필 메인 정보
+      .profileMainInfo {
+          font-size: 1.0em;
+          padding-left: 18px;
+          border-left : 1px solid rgb(189, 189, 189);
+          margin-top : 12px;
+          margin-left :-30px;  
+          line-height: 160%;
+          color: rgb(255, 255, 255);
+      }
+
+      // 프로필 메인정보_ 국가
+      .profileCountry {
+        display: inline-block;
+        margin-top: -5px;
+        margin-left: -8px;
+        text-align: left;
+      }
+
+      // 프로필 메인정보_ 이름
+      .profileName {
+          display: inline-block;
+          font-size: 1.5em;
+      }
+
+      // 프로필 메인 소셜바 (친구 추가, 팔로우, 인생 사전) 
+      .profileSocialbar {
+          margin-top: -5px;
+          margin-left: -2%; 
+          padding: 10px;
+          width: 102%;
+          color : white;
+          background-color: #2E4053 ;
+          opacity: 1.0;
+          background-image: url("https://postfiles.pstatic.net/MjAxODA2MjZfNDgg/MDAxNTMwMDA0NzM5NDY1.eaXzadSIzCQ0UJwmzgGHqMGAEFRS_yTwZvA0hY6TOsgg.4elp4ZFwGaQaHfZJIWNdGOG9HKJ6_aOYVnXsGvcJwO8g.JPEG.oyg11/desktop-3246124__340.jpg?type=w773");
+          background-size : 100% 100%;   
+
+       //   background: linear-gradient( to bottom, rgb(94, 94, 94), rgba(59, 48, 42, 0.788) );
+      }
+      // 프로필 메인 소셜바 버튼
+      .profilesocialbarBtn{
+          padding-bottom: 5px;
+          font-size : 25px;
+      }
+      // 프로필 메인 소개 텍스트_영역
+      .profileMainText {       
+          position: relative; 
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin-top: -10px;
+          margin-bottom: 5px;
+          background-image: url("https://postfiles.pstatic.net/MjAxODA2MjZfODQg/MDAxNTMwMDA1MjUwMjc1.Y6YgcJgiqyNk3JHNcsSuGBQjJbr4qPBAiKfHw-DuwYwg.hjAn-rlgUd7SlLowEmCjYNW69mmOrSQPlnmFM4lRfNwg.PNG.oyg11/image.png?type=w773");
+          background-size : 100% 100%;   
+     }
+     // 프로필 메인 소개 텍스트_ 이미지 수정 버튼
+         // 프로필 헤더 이미지 수정버튼
+     .profileMainTextImgEdit {
+        position: absolute;
+        top: 0%;
+        left: 89%;
+        font-size: 2.0em;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(46, 46, 46);
+        opacity: 0.5;
+        color: #fff;
+    }
+
+      // 프로필 메인 소개 텍스트_ 상세 제목
+      .profileMainTitle{
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 3px;
+        color: rgb(255, 255, 255);
+      }
+      // 프로필 메인 소개 텍스트_상세 내용 
+       .profileMaintextDetail{
+        // 줄바꿈 코드
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-break:break-all; word-wrap:break-word;
+
+        // 행간격 조절
+        line-height: 1.8;
+
+        padding-top: 25px;
+        font-size: 1.0em;  
+        text-align: left;
+        color: rgb(196, 196, 196);
+      }
+      // 모두 보기(공용 사용) 버튼
+      .viewAllBtn {
+          background-color: white;
+          color: black;
+          margin-left: -20px;
+      }
+      // 프로필 나이별 히스토리 이미지
+      .historyYearsImage{
+        width: 100%;
+        height: 100px;
+      }
+        
+      // 친구 리스트_ 전체 Div 영역
+      .friendsList{
+        background-color: white;
+        margin-top: 10px;
+      }
+        
+      // 친구 리스트_ 친구 이미지
+      .profileFriendsImg {
+        padding-left: 1px;
+        padding-bottom: 1px;
+      }
+        
+      // 친구 리스트_ 친구 이름
+      .friendsName {
+        padding-left: 5px;
+        margin-top: 1px;
+      }
+
+     // 카테고리 추가 버튼
+       .addCategoryBtn {
+        font-size :  20px;
+        background-color: white;
+        color: black;
+        margin-top: 15px;
+      }
+    
+    // 카테고리 조정 버튼
+       .adjustCategory{
+        font-size :  25px;  
+        background-color: white;
+        color: black;
+        padding-top: 10px;
+        padding-left: 30px;
+        text-align:  right;
+       }
+
 }

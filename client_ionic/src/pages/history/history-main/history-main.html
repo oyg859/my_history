@@ -1,18 +1,296 @@
-<!--
-  Generated template for the HistoryMainPage page.
+<ion-content>
+  <!-- 프로필 상단 대형 헤더 이미지-->
+    <button class="profileHeaderImgBtn" no-padding ion-button (click)="doLogout()">
+        <img style="width:100%; height:150px;" class="full-image" src="https://postfiles.pstatic.net/MjAxODA2MjFfMjc2/MDAxNTI5NTUyODM0ODM1.yt9YeHeW8xFakojinuH3Bc1Tb_kDTgkZR7VxPk2QClQg.XLn1QrBgh8yAYeQwT3JwnVtTrPAavB9L00TOO-WKzKMg.PNG.oyg11/image.png?type=w773">
+        <button class="profileHeaderEditImg" padding ion-button (click)="viewEditProfileHeaderImg()">
+        <ion-icon  name="ios-camera-outline"></ion-icon>
+      </button>
+      </button>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+    <!-- 프로필 메인 백그라운드 div-->
+    <div class="appBackground">
+  
+      <!-- 히스토리 메인 정보영역 Div  -->
+      <div class="historyMainInfoDiv">
+ 
+  
+      <!-- 프로필 메인 사진 & 프로필 메인 정보 통합틀-->
+      <div class="profileMainDiv">
+        <ion-row>
+          <ion-col>
+            <ion-avatar padding>
+              <img class="mainProfileImage" src="http://ionicframework.com/img/docs/mcfly.jpg">
+            </ion-avatar>
+            <button class="profileMainEditImg" padding ion-button (click)="viewEditProfileHeaderImg()">
+                <ion-icon  name="ios-camera-outline"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
 
-  <ion-navbar>
-    <ion-title>historyMain</ion-title>
-  </ion-navbar>
+            <!-- 프로필 메인 정보-->
+            <div class="profileMainInfo">
+              <ion-row>
+                <ion-col col-3>
+              <span class="profileCountry"><img style="width:35px; height:30px;" class="full-image" src="data:image/png;base64,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">
+                </span></ion-col>
+                <ion-col col-9>
+              <span class="profileName"><strong>마크 정</strong></span>
+            </ion-col>  
+            </ion-row>
+              <div>출생 &emsp; {{birthDay}}</div>
+              <div>거주지 &nbsp; {{address}}</div>
+              <div>좋아하는 것 &nbsp; {{like}} </div>
+              <div>직업 &nbsp; {{job}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="profileEditBtnRow">
+             <button class="profileEditBtn" ion-button (click)="doLogout()" round small>
+            <ion-icon md="ios-build"></ion-icon>
+          </button>
+      </div>
+  </div>
+      <!-- 친구추가 / 팔로우 / 인생 사전 버튼 -->
+      <ion-card class="profileSocialbar">
+        <ion-row center text-center>
+  
+          <ion-col>
+            <ion-icon class="profilesocialbarBtn" md="md-person-add" (click)="addFriend()"></ion-icon>
+            <div>친구 추가</div>
+          </ion-col>
+          <ion-col>
+            <ion-icon class="profilesocialbarBtn" md="md-people" (click)="addFollow()"></ion-icon>
+            <div>팔로우</div>
+          </ion-col>
+          <ion-col>
+            <ion-icon class="profilesocialbarBtn" md="ios-information-circle-outline" (click)="viewHistoryDic()"></ion-icon>
+            <div>인생 사전</div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+  
+      <!-- 프로필 상세 내용 (유저작성 문장) -->
+     
+      <div class="profileMainText">
+  
+          
+        <ion-row padding>
+          <div class="profileMainTitle">
+            <strong>" 나보다 다른 사람이 우선 "</strong>
+          </div>
+          <div class="profileMaintextDetail"> 강원도 양양에서 5남 3녀 중, 장녀로 태어났으며, 7살에 초등학교에 입학.
+            <br> 중학교때는 문예창작에 관심을 가져 동아리 활동을 시작하여18살에 여류작가로 데뷔. 20세에 서울로 상경 후 서울 출판사에 취직. 23세에 결혼하여 5명의 자식을 낳았으며, 이후 35세에 출판 대상 수상하여 후배 양성을 시작하였다.
+            <br> 좋아하는 음식은 곶감이며, 사람들과 화목하게 지내는 것을 무엇보다 가장 중요시 한다.
+            <br> 58세에 양로원 자원봉사 시작. 65세에 무료 양로원인 행복원을 설립하여 어려운 노인들을 돕기 시작. 최근에도 여러가지 자원봉사에 매진하고 있다.
+          </div>
+          <button class="profileMainTextImgEdit" padding ion-button (click)="viewEditProfileHeaderImg()">
+              <ion-icon  name="ios-camera-outline"></ion-icon>
+            </button>
+        </ion-row>
+     
+     
+    </div>
+      <!-- 나이별 히스토리 -->
+      <button class="historyYearsImage"  no-padding ion-button (click)="goHistoryByAgePage()">
+        <img  src="https://postfiles.pstatic.net/MjAxODA2MjFfMTMz/MDAxNTI5NTUyOTgwMjEw.Hl5ZoWo613f7om1AKBvtwmWM4cxT2adDGb2FGhyGV3Ug.s6mfvtGBfZ69jBkAXhQpnusOdPac8lxpQwBlYmkSf8Eg.PNG.oyg11/image.png?type=w773" />
+        <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
+        <div class="category-title">연도별 히스토리</div>
+        <div class="category-subtitle">3,187 개의 역사가 저장되어 있습니다.</div>
+        <!-- </button> -->
+      </button>
+  
+      <!-- 친구 목록 -->
+      <div class="friendsList">  
+        <div class="interestedReviewTitleTxt">
+            <ion-row>
+              <ion-col col-9>
+                <button ion-button icon-start clear>
+                  <div style="color: black; font-size: 1.1em;  padding-top:1px;">
+                 <strong>{{userName}} 님의 친구</strong>&emsp; {{friendsNumber}}명</div>
+                </button>
+              </ion-col>
+              <ion-col col-3 text-right>
+                <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+                  <p>모두 보기</p>
+                </button>
+              </ion-col>
+            </ion-row>
+          </div>
+        <ion-row>
+          <ion-col no-padding>
+            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <p class="friendsName">김성철</p>
+          </ion-col>
+          <ion-col no-padding>
+            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <p class="friendsName">Chen</p>
+          </ion-col>
+          <ion-col no-padding>
+            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <p class="friendsName">Camela</p>
+          </ion-col>
+          <ion-col no-padding>
+            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <p class="friendsName">Mark</p>
+          </ion-col>
+          <ion-col no-padding>
+            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <p class="friendsName">이종운</p>
+          </ion-col>
+        </ion-row>
+      </div>
 
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+      <ion-card>
+        <ion-row>
+          <ion-col col-9>
+            <p class="categories">
+              <strong>저장된 인생</strong>&emsp;
+              <span class="addCategoryBtn" (click)="viewAddCategory()">
+                <ion-icon name="add-circle"></ion-icon>
+              </span>
+            </p>
+          </ion-col>
+          <ion-col col-3>
+            <p>
+              <span class="addCategoryBtn" (click)="viewAdjustCategory()">
+                <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
+              </span>
+            </p>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col class="col-categories" no-padding>
+            <ion-list>
+              <div *ngFor="let category of categories; let i=index">
+                <ion-card>
+                  <button class="cardCategoryImage" no-padding ion-button (click)="doLogout()">
+                    <img src="https://i.ytimg.com/vi/IudAEMPxoM8/maxresdefault.jpg" />
+                    <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
+                    <div class="category-title">{{category.categoryName}}</div>
+                    <div class="category-subtitle">31 포스트</div>
+                    <!-- </button> -->
+                  </button>
+                </ion-card>
+  
+              </div>
+            </ion-list>
+            <!-- </ion-scroll> -->
+          </ion-col>
+        </ion-row>
+      </ion-card>
+  
+      <ion-item>
+        <strong>히스토리 게시글</strong>
+      </ion-item>
+      <ion-list *ngFor="let content of contents">
+        <!-- <ion-card> -->
+        <ion-row>
+          <ion-col col-5 no-padding>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="http://ionicframework.com/img/docs/mcfly.jpg">
+              </ion-avatar>
+              <h3>
+                <strong>{{content.userName}}</strong>
+              </h3>
+              <p>30분전</p>
+            </ion-item>
+          </ion-col>
+          <ion-col class="boardlocationInfoCol" col-5 no-padding>
+            <ion-item class="boardlocationInfoText" no-lines>
+              <ion-icon name="ios-pin"></ion-icon>
+              강서구 화곡동
+              <p></p>
+            </ion-item>
+          </ion-col>
+          <ion-col class="boardsideMenu" col-2 no-padding>
+            <ion-item text-right no-lines>
+              <ion-icon md="md-more"></ion-icon>
+              <p></p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <img class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
+  
+        <ion-item text-left>
+          <div>
+            <strong>{{content.title}}</strong>
+          </div>
+          <div class="boardContentsArea">
+            Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!Whoa. This
+            is heavy.
+          </div>
+        </ion-item>
+        <!-- 해시 태그 -->
+        <ion-item class="hashTag">
+          <p>{{hashTag}} &emsp; +12명 관심</p>
+        </ion-item>
+  
+        <!-- 댓글 -->
+        <ion-item class="replyText">
+          <strong>정순철</strong> &emsp; 벌써 오래전이구나~! 세월빠르네 ㅠ
+        </ion-item>
+  
+  
+        <ion-row class="boardSelectBtn">
+          <ion-col>
+            <button ion-button icon-start clear>
+              <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+              <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear>
+              <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+              <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear>
+              <!-- <button ion-button icon-start clear small> -->
+              <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+              <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+            </button>
+          </ion-col>
+        </ion-row>
+  
+        <!-- </ion-card> -->
+      </ion-list>
+  
+  
+      <!-- 게시글이 있다면..  -->
+      <!-- <ion-item *ngif="history_index"> -->
+      <!-- for 문으로 게시글 출력-->
+      <ion-item>
+        <span>프로필 이미지</span>
+        <span> {{userName}} </span>
+        <span> 작성일시</span>
+        <span> 발생 장소</span>
+        <span> 게시글별 수정/삭제 메뉴</span>
+      </ion-item>
+      <ion-item>
+        제목
+      </ion-item>
+      <ion-item>
+        본문 & 사진
+      </ion-item>
+      <ion-item>
+        해시태그
+      </ion-item>
+      <!-- 댓글이 있다면 댓글 출력-->
+      <ion-item>
+        댓글
+      </ion-item>
+      <ion-item>
+        <span>좋아요수</span>
+        <span>댓글수</span>
+        <span>공유수</span>
+      </ion-item>
+  
+      <!-- </ion-item> -->
+      <!-- 게시글이 없다면 게시글 입력 유도 메시지 출력 -->
+  
+  </div>
+  </ion-content>

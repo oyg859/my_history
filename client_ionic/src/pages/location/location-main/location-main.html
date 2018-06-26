@@ -1,18 +1,142 @@
-<!--
-  Generated template for the LocationMainPage page.
+<ion-content>
+  <!-- 프로필 메인 백그라운드 div-->
+  <div class="appBackground">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+    <!-- 상단 위치 게시글 작성 페이지 가기 버튼 -->
+    <ion-row>
+      <ion-col col-10>
+        <button class="goAddLocationBtn" ion-button (click)="goAddLocation()">
+          <strong>지금 인생의 발자취를 남기실래요?</strong>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button icon-start clear>
+          <ion-icon style="margin-left: -5px; color: rgb(17, 155, 235); zoom: 2.5;" name="ios-camera"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
 
-  <ion-navbar>
-    <ion-title>locationMain</ion-title>
-  </ion-navbar>
 
-</ion-header>
+    <!-- 방문한 지역_ 유저 랭킹 및 스테이터스 -->
+    <div class="userLocationStatus">
+      <span (click)="viewAddCategory()">
+        <ion-icon style="color: rgb(109, 108, 108); padding-left: 15px;" name="ios-pin"></ion-icon> Lv.10 &emsp; 32,587 지역을 방문하였습니다. (19,277위)
+      </span>
+    
+    </div>
 
+    <!--방문한 지역 타이틀 텍스트 -->
+    <div class="visitLocationTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-globe"></ion-icon>
+            <div style="color: grey;  font-size: 1.0em; padding-top:1px;">&ensp;방문한 지역</div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>모두 보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
 
-<ion-content padding>
+    <!-- 방문한 지역_최근 방문 지역 Div -->
+    <div class="recentlyVisitLocationDiv">
+      <ion-row>
+        <ion-col>
+          <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+          />
+          <div>
+            <strong>한옥식당</strong>
+          </div>
+          <p>경기도 화성시 병점동 나무길</p>
+          <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+          <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">&ensp;4.2</span>
+          &emsp; 어제
+        </ion-col>
+        <ion-col>
+          <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ3/MDAxNTI5MzkzMDYwNTQx.N6aGnIZJYtymwU4VaYYnOVDLYsK1R9MbGnZn3wtrMGog.0ft1QMU721RgbdaWAvfkcnrqKO9zFUEEezbGjOybWfkg.PNG.oyg11/image.png?type=w773"
+          />
+          <div>
+            <strong>이치란 라멘</strong>
+          </div>
+          <p>일본 도쿄도 시부야</p>
+          <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+          <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">&ensp;4.5</span>
+          &emsp; 5일전
+        </ion-col>
+        <ion-col>
+          <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfNjEg/MDAxNTI5MzkzMDc2OTUx.wE1OWfVv4Kfhii9dBmjIpmmM7BUQ_YEDNv9DiztWw8Yg.k5Mw3Q3tnkmy3Sy9qmamFnCGv87Q2RI5LqT27LKnaOkg.PNG.oyg11/image.png?type=w773"
+          />
+          <div>
+            <strong>호치민 광장</strong>
+          </div>
+          <p>베트남, Quan 122</p>
+          <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+          <span style="color: grey;  font-size: 1.0em; padding-top:5px; margin-right: -5px;">&ensp;3.8</span>
+          &emsp; 13일전
+        </ion-col>
+      </ion-row>
+    </div>
 
+    <!-- 미션 타이틀 텍스트 -->
+    <div class="locationMissionTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(109, 108, 108); zoom: 1.1;" name="ios-clipboard"></ion-icon>
+            <div style="color: grey;  font-size: 1.0em; ">&ensp;미션</div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="viewMissionInfo()">
+            <p>모두 보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+      <hr>
+    </div>
+
+    <!-- 미션 진행 현황 -->
+    <div class="missionInfo">
+      <span (click)="viewMissionInfo()">
+        <ion-icon style="color: rgb(109, 108, 108); padding-left: 15px;" name="ios-pin"></ion-icon> 맛집 개척자 미션 진행중입니다. (38% 달성 중)
+      </span>
+    </div>
+
+    <!-- 내 장소 카테고리 -->
+    <!-- 내 장소 카테고리 Div (카테고리 추가 & 카테고리 조정) -->
+    <div class="categories">
+      <ion-row class="categorytitlebarRow">
+        <ion-col col-9>
+          <strong>내 장소 카테고리</strong>&emsp;
+          <span class="addCategoryBtn" (click)="viewAddCategory()">
+            <ion-icon name="add-circle"></ion-icon>
+          </span>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <span class="adjustCategoryBtn" (click)="viewAdjustCategory()">
+            <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
+          </span>
+        </ion-col>
+      </ion-row>
+
+      <!-- 내 장소 카테고리 이미지 -->
+      <div class="locationCategoryImgDiv">
+        <ion-row>
+          <ion-col col-6 no-padding>
+            <img class="locationCategoryPic" src="https://blogfiles.pstatic.net/MjAxODA2MjBfMTQ1/MDAxNTI5NDc4MTMxNzgw.eyDZnhj3RP7DoQxzF7lmGsXDlMzPcH3ANMdJvf31-_Yg.oep1q3tlY0wXOjA0EXZx8oj0OOUMb_CMGz7a2wNFda4g.PNG.oyg11/image.png"
+            />
+          </ion-col>
+          <ion-col col-6 no-padding>
+            <img class="locationCategoryPic" src="https://blogfiles.pstatic.net/MjAxODA2MjBfMjU4/MDAxNTI5NDc4MTcwODUx.XUX5cfkekZBEdZXuY8oakwu_riykSDjwOg3FLFGWM_Eg.aX7dJ-amb4WiUHbf63RHSAiuq1mBFFLeBJwxkTxR3kUg.PNG.oyg11/image.png"
+            />
+          </ion-col>
+        </ion-row>
+
+      </div>
+    </div>
+  </div>
 </ion-content>
