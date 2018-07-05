@@ -27,10 +27,14 @@
       "path": "/member/doLogout",
       "proxyUrl": "http://127.0.0.1:3000/member/doLogout"
     },
-
     {
       "path": "/getInfo",
       "proxyUrl": "http://localhost:3000/getInfo"
+    },
+    {
+      "path": "/images",
+      "proxyUrl": "http://127.0.0.1:3000/images"
     }
+
   ]
 }

@@ -29,6 +29,237 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+  <!-- 메인 백그라운드 div-->
+  <div class="appBackground">
+    <!-- 유저 (프로필 사진, 이름) -->
+    <div class="userBar">
+      <ion-row>
+        <ion-col col-2 class="userImage">
+          <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+            <ion-avatar item-start>
+              <img src="https://postfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w773">
+            </ion-avatar>
+
+          </ion-item>
+        </ion-col>
+        <ion-col col-3 class="userNameCol">
+          <span class="userName">&emsp;정숭민</span>
+          <div class="regDate">30분전</div>
+        </ion-col>
+        <ion-col col-5 no-padding>
+          <ion-item class="boardlocationInfoCol" no-lines>
+            <ion-icon name="ios-list-box"></ion-icon>
+            &nbsp; 술 >> 와인
+            <p></p>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+            팔로우
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- /////// 유저 게시글 본문 ////// -->
+
+    <div class="boardLocationInfoDiv" text-left>
+      <ion-item class="reviewItemDiv">
+        <div class="reviewItemName">         
+          몬테스 알파 쉬라     
+          &ensp;
+          <ion-icon style="color: rgb(255, 231, 13); zoom: 0.8;" name="ios-star"></ion-icon>
+          <span class="locationSubInfo">&nbsp;3.8</span>
+          &ensp;
+          <span class="locationSubInfo">(전체 </span>
+          &nbsp;
+          <ion-icon style="color: rgb(255, 231, 13); zoom: 0.8;" name="ios-star"></ion-icon>
+          <span class="locationSubInfo">
+          &nbsp;4.2)</span>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <!-- 유저 게시글_ 제목-->
+        <div class="reviewTitle">         
+            역대급 칠레 가성비 최고의 와인   
+        </div>
+        <br> 
+        <div class="reviewContent">   
+            소주를 좋아하는 사람의 와인 입문으로 제격!      
+      </div>
+      </ion-item>
+
+      <!-- 게시글 대표 이미지 -->
+      <button class="boardImage" no-padding ion-button (click)="goHistoryByAgePage()">
+        <img src="https://postfiles.pstatic.net/MjAxODA2MzBfMjUw/MDAxNTMwMzQ0MjcwMDg2.C6pEixlNYonh8Rdjnr0KsRha0FGYXVjGECmfYrFVvB0g.fMxAxbun9kTZbZ7EskaFIi3xqKvwPG_Q6hf2qvnEVSMg.JPEG.oyg11/wine.jpg?type=w773"
+        />
+
+      </button>
+      <!-- 게시글 서브 이미지 -->
+      <ion-row class="boardSubImageRow">
+        <ion-col class="boardSubImageCol" no-padding>
+          <img class="boardSubImage" src="https://mblogthumb-phinf.pstatic.net/20160607_246/aquatinter_1465289884193k70g2_JPEG/IMG_7266.jpg?type=w800"
+          />
+        </ion-col>
+        <ion-col class="boardSubImageCol" no-padding>
+          <img class="boardSubImage" src="https://mblogthumb-phinf.pstatic.net/20140310_66/onhumom_13944605749010MMO0_JPEG/IMG_6651.JPG?type=w2"
+          />
+        </ion-col>
+        <ion-col class="boardSubImageCol" no-padding>
+          <img class="boardSubImage" src="https://postfiles.pstatic.net/MjAxODA2MzBfNjEg/MDAxNTMwMzQ4OTEzNTgx.-rc8hHgT6XlaAOAkRGY8v05cPZpQGcE8LvlsqcH9XDQg.IxH6CbEjODs9mpl5bD1eyHdF7ve_VeiDDBZxh8kWjisg.PNG.oyg11/wiskey.png?type=w773"
+          />
+        </ion-col>
+        </ion-row>
+        </div>
+        <!-- 해시 태그 -->
+        <ion-item class="hashTag">
+          <p>#몬테스 알파 #가성비 와인 #칠레 &emsp; +12명 관심</p>
+        </ion-item>
+        <!-- 게시글 하단 댓글 -->
+        <ion-item class="replyText" no-lines>
+          <strong>김성중</strong> &emsp; 여기 진짜 좋아요!
+        </ion-item>
+        <hr>
+
+    <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+    <ion-row class="homeBoardSelectBtn">
+      <ion-col class="homeBoardSelectBtnCol">
+        <button ion-button icon-start clear>
+          <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+          <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+        </button>
+      </ion-col>
+      <ion-col class="homeBoardSelectBtnCol">
+        <button ion-button icon-start clear>
+          <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+          <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+        </button>
+      </ion-col>
+      <ion-col class="homeBoardSelectBtnCol">
+        <button ion-button icon-start clear>
+          <!-- <button ion-button icon-start clear small> -->
+          <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+          <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+<!-- 게시글 반복 -->
+
+
+    <!-- 유저 (프로필 사진, 이름) -->
+    <div class="userBar">
+        <ion-row>
+          <ion-col col-2 class="userImage">
+            <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+              <ion-avatar item-start>
+                <img src="https://postfiles.pstatic.net/MjAxODA2MjdfMTA3/MDAxNTMwMDY3MDI2MzUx.iHylNGpn1u8k0yWeP2VSClV-tasT6lwJvjYWg-LYLw8g.mscIOxqPcjsCgR-Wy8TCwOpBV8BgY-bHhe1HOPIJYrkg.PNG.oyg11/20180627_113652.png?type=w773">
+              </ion-avatar>
+  
+            </ion-item>
+          </ion-col>
+          <ion-col col-3 class="userNameCol">
+            <span class="userName">&emsp;이한희</span>
+            <div class="regDate">20일전</div>
+          </ion-col>
+          <ion-col col-5 no-padding>
+            <ion-item class="boardlocationInfoCol" no-lines>
+              <ion-icon name="ios-list-box"></ion-icon>
+              &nbsp; 생활 >> 의약품
+              <p></p>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+              팔로우
+            </button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <!-- /////// 유저 게시글 본문 ////// -->
+  
+      <div class="boardLocationInfoDiv" text-left>
+        <ion-item class="reviewItemDiv">
+          <div class="reviewItemName">         
+            휴족시간     
+            &ensp;
+            <ion-icon style="color: rgb(255, 231, 13); zoom: 0.8;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&nbsp;4.5</span>
+            &ensp;
+            <span class="locationSubInfo">(전체 </span>
+            &nbsp;
+            <ion-icon style="color: rgb(255, 231, 13); zoom: 0.8;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">
+            &nbsp;4.3)</span>
+          </div>
+        </ion-item>
+  
+        <ion-item>
+          <!-- 유저 게시글_ 제목-->
+          <div class="reviewTitle">         
+              여행의 동반자 필수품!    
+          </div>
+          <br> 
+          <div class="reviewContent">   
+              여행 갈때 반드시 챙겨가는 휴족시간이 있어 다행      
+        </div>
+        </ion-item>
+  
+        <!-- 게시글 대표 이미지 -->
+        <button class="boardImage" no-padding ion-button (click)="goHistoryByAgePage()">
+          <img src="https://a.ecimg.tw/items/DDAI9FA900607M3/000001_1507689743.jpg"
+          />
+  
+        </button>
+        <!-- 게시글 서브 이미지 -->
+        <ion-row class="boardSubImageRow">
+          <ion-col class="boardSubImageCol" no-padding>
+            <img class="boardSubImage" src="http://cfile3.uf.tistory.com/image/257AAF3D5498DA383BD4AD"
+            />
+          </ion-col>
+          <ion-col class="boardSubImageCol" no-padding>
+            <img class="boardSubImage" src="http://4.bp.blogspot.com/-HMGbzfoH0y0/Vm59pnG0j4I/AAAAAAAAAE0/ds2HClG_ejU/s1600/%25EC%25B0%25A9%25EC%259A%25A9%25EC%2583%25B7.jpg"
+            />
+          </ion-col>
+          <ion-col class="boardSubImageCol" no-padding>
+            <img class="boardSubImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPALIy8J_lOSDeuvwecIIw9PTZ90CMP90_IPxrYUCfj2Qc2KpYQ"
+            />
+          </ion-col>
+        </ion-row>
+      </div>
+        <!-- 해시 태그 -->
+        <ion-item class="hashTag">
+            <p>#여행 필수품 #일본 #파스 &emsp; +137명 관심</p>
+          </ion-item>
+      <!-- 게시글 하단 댓글 -->
+      <ion-item class="replyText" no-lines>
+        <strong>홍성수</strong> &emsp; 발 아픈데는 최고지!
+      </ion-item>
+      <hr>
+  
+      <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+      <ion-row class="homeBoardSelectBtn">
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+            <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <!-- <button ion-button icon-start clear small> -->
+            <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+          </button>
+        </ion-col>
+      </ion-row>
+  </div>
 </ion-content>

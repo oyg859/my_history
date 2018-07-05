@@ -84,4 +84,7 @@
     <allow-navigation href="http://192.168.0.8:8100" />
     <engine name="android" spec="7.0.0" />
     <engine name="ios" spec="4.5.4" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-firebase" spec="^1.0.5" />
 </widget>

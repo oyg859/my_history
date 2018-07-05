@@ -16,4 +16,126 @@ page-tabs-review-main {
         zoom: 1.5;
         color: rgb(99, 99, 99);
     }
+
+
+////////////// 게시글_ 유저바 //////////////
+    // 유저바 영역 Div
+    .userBar {
+        margin-top: 0px;
+        
+        background-color: rgb(29, 29, 29);
+    }
+    // 유저바 영역_ 사진
+    .userImage {
+        margin-top: -5px;
+        margin-bottom: -5px;
+        padding-left: 15px;              
+    }
+
+     // 유저바 영역_ 텍스트 영역 col (가족분류, 가족이름)
+    .userNameCol {
+        margin-top: 5px;
+        padding-top: -20px;
+    }
+      // 유저바_ 유저이름 텍스트
+    .userName {
+        color: rgb(202, 202, 202);
+        margin-left: -10px;
+        font-weight: bold;
+    }
+    // 유저바_ 게시글 등록시간_ 
+    .regDate {
+        color: rgb(180, 179, 179);
+        margin-left: 5px;
+    }
+    // 유저바_ 게시글 위치 
+    .boardlocationInfoCol {
+        color: rgb(180, 179, 179);
+        background-color: rgb(29, 29, 29);
+        margin-left: -30px;
+        margin-right: 20px;
+        
+        font-size: 0.9em;
+    }
+     // 유저바 영역_팔로우 버튼
+     .followtBtn {
+        color: rgb(167, 128, 57);
+        background-color: rgb(29, 29, 29);
+        border: 0.5px solid rgb(167, 128, 57);
+        margin-left: -40px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-right: 20px;  
+    }
+    /////////// 이상 게시글_ 유저바 영역 /////////////////
+    
+    // 게시글 영역_ 리뷰 아이템 영역 (리뷰명, 평점)
+    .reviewItemDiv {
+        background-color: rgb(243, 243, 242);
+    }
+    // 게시글 영역_ 리뷰 항목명
+    .reviewItemName {
+        font-size: 1.2em;
+        font-weight: bold; 
+        padding-bottom: 5px;
+        
+    }
+    
+    // 게시글 영역_ 리뷰 게시글 제목
+    .reviewTitle {
+        font-size: 1.1em;
+        font-weight: bold;   
+    }
+    // 게시글 영역_ 리뷰 게시글 제목
+    .reviewContent {
+        font-size: 0.9em;   
+    }
+    // 게시글 영역_ 리뷰 아이템명
+    .reviewItemName {
+        font-size: 1.1em;
+        font-weight: bold;   
+    }
+    // 이 근처 주목받는 장소 정보 영역_ 서브 정보 아이콘
+    .locationSubInfo {
+        color: rgb(155, 155, 155); 
+        font-weight: normal;
+        font-size: 0.8em;
+        padding-top:5px;
+        margin-right: -5px;
+    }
+
+    // 게시글 대표 이미지
+    .boardImage{
+        margin-top: -0px;
+        margin-left: -1px;
+        width: 100%;
+        height: 230px;
+     }
+  // 게시글 서브 이미지 영역 Row
+    .boardSubImageRow {
+        margin-left: -2px;
+  }
+  // 게시글 서브 이미지 개별 Col
+    .boardSubImageCol {
+        margin-top: -2px;
+        margin-left: -1px;
+        margin-bottom: -2px;
+        margin-left: 2px;
+  }
+
+  // 게시글 서브 이미지 개별 Col
+    .boardSubImage {
+        width: auto;
+        height: 110px;
+  }
+
+     // 게시글 하단 버튼 (좋아요/ 댓글/ 공유)
+    .homeBoardSelectBtn {
+        background-color: white;
+        color: grey;
+        zoom: 1.2;
+        padding-left: 10px;
+        margin-top: -12px;
+        margin-bottom: -5px;
+    }
 }

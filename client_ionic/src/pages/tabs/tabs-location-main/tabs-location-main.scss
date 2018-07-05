@@ -16,4 +16,162 @@ page-tabs-location-main {
         zoom: 1.5;
         color: rgb(99, 99, 99);
     }
+
+    // 장소 메인_이 근처 주목받는 장소 타이틀 텍스트
+    .recommendLocationTitleTxt{
+      
+        margin-left: -20px;
+        background-color  : white;
+        padding-top: 5px;
+        padding-bottom: 0px;
+      
+    }
+    // 모두 보기(공용 사용) 버튼
+    .viewAllBtn {
+        background-color: white;
+        color: black;
+        margin-left: -20px;
+    }
+    // 장소 메인_ 이 근처 주목받는 장소 슬라이드 카드 영역
+    .recommendLocationCard {   
+        margin-right: -5px;
+    } 
+
+    //////// 이 근처 주목받는 장소_ 카드 가로 스크롤 세팅 
+    .scroll-zoom-wrapper {
+        white-space: nowrap;
+        
+    }
+    ion-card {
+        width: 200px !important;
+        height: 300px;
+        display: inline-block;
+    }
+
+    ion-scroll {
+        background-color: white;
+        margin-top: -10px;
+        min-height: 160px; 
+        height: auto;
+
+            .scroll-content {
+            padding: 0px !important;
+        }    
+    }
+    // 이 근처 주목받는 장소 정보 영역 Div
+    .locationInfoDiv {
+        margin-left: -5px;
+    }
+    // 이 근처 주목받는 장소 정보_장소 대표 사진
+    .recommendLocationPic{
+        
+    }
+    // 이 근처 주목받는 장소 정보 영역_ 위치 이름
+    .locatinName {
+        font-size: 1.2em;
+        font-weight: bold;
+        
+    }
+
+    // 이 근처 주목받는 장소 정보 영역_ 서브 정보 아이콘
+    .locationSubInfo {
+        color: rgb(155, 155, 155); font-weight: normal;  font-size: 0.9em; padding-top:5px; margin-right: -5px;
+    }
+
+///////////////////////////////////////////////
+
+    //////// 인기 장소 /////////
+     
+    // 장소 메인_이 근처 주목받는 장소 타이틀 텍스트
+    .popularLcationTitleTxt{
+      
+        margin-left: -20px;
+        margin-top: 10px;
+        background-color  : white;
+        padding-top: 5px;
+        padding-bottom: 0px;
+      
+    }    
+
+////////////// 게시글_ 유저바 //////////////
+    // 유저바 영역 Div
+    .userBar {
+        margin-top: 10px;
+        
+        background-color: rgb(29, 29, 29);
+    }
+    // 유저바 영역_ 사진
+    .userImage {
+        margin-top: -5px;
+        margin-bottom: -5px;
+        padding-left: 15px;              
+    }
+
+     // 유저바 영역_ 텍스트 영역 col (가족분류, 가족이름)
+    .userNameCol {
+        margin-top: 5px;
+        padding-top: -20px;
+    }
+      // 유저바_ 유저이름 텍스트
+    .userName {
+        color: rgb(202, 202, 202);
+        margin-left: -10px;
+        font-weight: bold;
+    }
+    // 유저바_ 게시글 등록시간_ 
+    .regDate {
+        color: rgb(180, 179, 179);
+        margin-left: 5px;
+    }
+    // 유저바_ 게시글 위치 
+    .boardlocationInfoCol {
+        color: rgb(180, 179, 179);
+        background-color: rgb(29, 29, 29);
+        margin-left: -30px;
+        margin-right: 20px;
+        
+        font-size: 0.9em;
+    }
+     // 유저바 영역_팔로우 버튼
+     .followtBtn {
+        color: rgb(167, 128, 57);
+        background-color: rgb(29, 29, 29);
+        border: 0.5px solid rgb(167, 128, 57);
+        margin-left: -40px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-right: 20px;  
+    }
+
+
+    //////// 유저 장소 게시글_ 이미지 가로 스크롤 세팅 
+    ion-card.locationBoardImgCard {
+        width: 200px !important;
+        height: 300px;
+        display: inline-block;
+        margin-left: -5px;
+        margin-right: 3px;
+        
+    }
+    ion-scroll.locationBoardImg {
+        background-color: white;
+        margin-top: -10px;
+      
+        min-height: 130px; 
+        height: auto;
+
+            .scroll-content {
+            padding: 0px !important;
+        }    
+    }
+
+      // 게시글 하단 버튼 (좋아요/ 댓글/ 공유)
+    .homeBoardSelectBtn {
+        background-color: white;
+        color: grey;
+        zoom: 1.2;
+        padding-left: 10px;
+        margin-top: -12px;
+        margin-bottom: -5px;
+    }
 }

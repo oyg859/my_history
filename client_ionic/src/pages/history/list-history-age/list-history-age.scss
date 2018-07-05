@@ -10,6 +10,22 @@ page-list-history-age {
         margin-bottom: 1px;
         background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMzAg/MDAxNTI5NTYwNzQ1OTc0.3fRn5DPPmcuq2YeRV9iq-1jMzb24OMKJrr6a2dbeZJUg.gHy-zPfc1LZf2lv_zwXSVv5Y57z2dyj57mieLqegGDUg.JPEG.oyg11/%ED%94%84%EB%A1%9C%ED%95%84_%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%B0%B0%EA%B2%BD%EC%83%89.jpg?type=w773");
     }
+    // 나이(연도) 리스트 바 배경 이미지
+    .ageListBarImg {
+        position: absolute;
+        background-color: rgb(8, 44, 73);
+        color: white;
+        width: 100%;
+        height: 76px;
+        top: 0%;
+        left: 0%;
+        // margin-top: -20px;
+        // padding-bottom: 20px;
+        // padding-left: 15px;
+        // margin-bottom: 1px;
+    }
+
+
      // 연도 리스트바_ 이미지 편집
     .historyAgeBarImg {
         position: absolute;
@@ -47,16 +63,20 @@ page-list-history-age {
         padding-bottom: 10px;
         padding-left: 15px;
         color: rgb(185, 184, 184);
+        margin-top: -5px;
     } 
     // 히스토리 이미지 묶음 영역
     .historyImgRow {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        margin-left: 2px;
     }
 
     // 히스토리 이미지
     .historyImg {
         padding-left: 1px;
         padding-bottom: 1px;
+        width: 86px;
+        height: 86px;
     } 
 
 }

@@ -189,6 +189,7 @@ page-history-main {
           background-color: white;
           color: black;
           margin-left: -20px;
+          margin-top: 6px;
       }
       // 프로필 나이별 히스토리 이미지
       .historyYearsImage{
@@ -206,6 +207,8 @@ page-history-main {
       .profileFriendsImg {
         padding-left: 1px;
         padding-bottom: 1px;
+        width:72px;
+        height:72px;
       }
         
       // 친구 리스트_ 친구 이름

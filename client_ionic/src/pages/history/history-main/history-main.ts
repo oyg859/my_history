@@ -9,6 +9,7 @@ import { AddLocationPage } from '../../location/add-location/add-location';
 import { AddReviewPage } from '../../review/add-review/add-review';
 import { AddCategoryPage } from '../../category/add-category/add-category';
 import { ListHistoryAgePage } from '../list-history-age/list-history-age';
+import { ViewFamilyTreePage } from '../view-family-tree/view-family-tree';
 
 /**
  * Generated class for the HistoryMainPage page.
@@ -112,4 +113,8 @@ export class HistoryMainPage {
     this.appCtrl.getRootNav().push(ListHistoryAgePage);    
   }
 
+  // 가족 모두보기 버튼 클릭 시
+  viewFamilyTree(){
+    this.appCtrl.getRootNav().push(ViewFamilyTreePage);
+  }
 }

@@ -99,7 +99,49 @@
         <div class="category-subtitle">3,187 개의 역사가 저장되어 있습니다.</div>
         <!-- </button> -->
       </button>
-  
+
+      <!-- 가족 목록 -->
+      <div class="friendsList">  
+          <div class="interestedReviewTitleTxt">
+              <ion-row>
+                <ion-col col-9>
+                  <button ion-button icon-start clear>
+                    <div style="color: black; font-size: 1.1em;  padding-top:1px;">
+                   <strong>{{userName}} 님의 가족</strong>&emsp;  직계 3명 &ensp; 친척 28명</div>
+                  </button>
+                </ion-col>
+                <ion-col col-3 text-right>
+                  <button clear class="viewAllBtn" ion-button (click)="viewFamilyTree()">
+                    <p>모두 보기</p>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </div>
+          <ion-row>
+            <ion-col no-padding>
+              <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMjUy/MDAxNTMwMDY2NDc0ODQ2.BMdf73656IXrZ6LVBeaN4SSMRTXHNmUe2tY83zwooNMg.aDuWWXl-OihJcybd50r8nOsb6Q7QQgP7cBJWZwj253Mg.PNG.oyg11/%ED%95%A0%EB%A8%B8%EB%8B%882.png?type=w773" />
+              <p class="friendsName">김복례</p>
+            </ion-col>
+            <ion-col no-padding>
+              <img class="profileFriendsImg" src="https://blogfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w1" />
+              <p class="friendsName">정순철</p>
+            </ion-col>
+            <ion-col no-padding>
+              <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTcw/MDAxNTMwMDY2NDg1Nzkx.ee_9Lng-B1PRK7g57sGJRjN55DxiigeIsngbCO0RRYsg.cf1cNhqb1nDkYBXu3gQhpPtfDvsjqLfFGA5ZU8sl0JQg.PNG.oyg11/baby14_2.png?type=w773" />
+              <p class="friendsName">이새롱</p>
+            </ion-col>
+            <ion-col no-padding>
+              <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTA3/MDAxNTMwMDY3MDI2MzUx.iHylNGpn1u8k0yWeP2VSClV-tasT6lwJvjYWg-LYLw8g.mscIOxqPcjsCgR-Wy8TCwOpBV8BgY-bHhe1HOPIJYrkg.PNG.oyg11/20180627_113652.png?type=w773" />
+              <p class="friendsName">정한울</p>
+            </ion-col>
+            <ion-col no-padding>
+              <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMzYg/MDAxNTMwMDY3MzAyMTQ2.WmmOirW1vVQiSQt0wG4uH_sKBKjYHTawu5mn2_YROuIg.VU56dlqOC4lamPz6cllNVrjs6KKpFkNuNTcBpdYxBEsg.PNG.oyg11/20180627_114032.png?type=w773" />
+              <p class="friendsName">김분례</p>
+            </ion-col>
+
+          </ion-row>
+        </div>
+
       <!-- 친구 목록 -->
       <div class="friendsList">  
         <div class="interestedReviewTitleTxt">
@@ -119,23 +161,23 @@
           </div>
         <ion-row>
           <ion-col no-padding>
-            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfODUg/MDAxNTMwMDY2NDY0NTE1.6UVo5CJ5NEXfWABbsdU7PaVl3_IMXGQGqRihQ1UKtVYg.joHEERaZcKma7zPvs8s6ugWokbrdar-3z8TXjHb2wYYg.PNG.oyg11/profile1.png?type=w773" />
             <p class="friendsName">김성철</p>
           </ion-col>
           <ion-col no-padding>
-            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfODAg/MDAxNTMwMDY2NDY0NTA3.SQ4WlABTZ-PQgjZxkrJcyDAVcXfYBH8_k4zOMdOeRT0g.YWqjpz260ReqCiniN1GQu1Ol94GkXYbJLM6qDJsM3b0g.PNG.oyg11/profile3.png?type=w773" />
             <p class="friendsName">Chen</p>
           </ion-col>
           <ion-col no-padding>
-            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMzEg/MDAxNTMwMDY2NDY0NjAw.4DKJ5yz55lzYZPMMNASbOsxsxeT4XEw5ISrMTVCdM90g.HQpt_UVIca_8ujLR-xxoAdE5DX8-MN6lNw4LJXWkol8g.PNG.oyg11/profile2.png?type=w773" />
             <p class="friendsName">Camela</p>
           </ion-col>
           <ion-col no-padding>
-            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTc5/MDAxNTMwMDY2NDY0NTE1.1gwzpI0Jaw0vXlQ5nPAn-tECyUjcXoAk3-xufzZ44Hgg.8qPxcpWD0QswBtLT4uC-6Fiz50JrRXFPt9xfz4j6rX8g.PNG.oyg11/profile.png?type=w773" />
             <p class="friendsName">Mark</p>
           </ion-col>
           <ion-col no-padding>
-            <img class="profileFriendsImg" src="http://ionicframework.com/img/docs/mcfly.jpg" />
+            <img class="profileFriendsImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMjgx/MDAxNTMwMDY2NTE1OTM0.sPKjo8dbU_Cw3UwfkilxVu2gYkaZnto58leoF1zx70kg.8dvJ-mbk4MxtC2mTcD3Ba6eFmyZRw7RWreYk27XqoJMg.JPEG.oyg11/baby_8.jpg?type=w773" />
             <p class="friendsName">이종운</p>
           </ion-col>
         </ion-row>

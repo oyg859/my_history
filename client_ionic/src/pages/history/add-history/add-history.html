@@ -94,49 +94,85 @@
         </ion-item>
       </div>
 
+ <img [src]="base64Image">     
+<!-- 이미지 입출력 유튜브 코드 테스트 -->
+    <h3 [hidden]="images.length !==0" text-center>이미지를 찾을수 없습니다.</h3>  
+    
+    <ion-list>
+        <ion-item-sliding *ngFor="let img of images">
+          <ion-item tappable (click)="openImage(img)">
+            <ion-thumbnail item-start>
+              <img [src]="img.url">
+            </ion-thumbnail>
+             <h2> {{ img.desc }}</h2> 
+            이미지 설명
+            <button ion-button clear icon-only item-end>
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+          </ion-item>
+          <ion-item-options side ="right">
+            <button ion-button icon-only color="danger" (click)="deleteImage(img)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list> 
+
       <!-- 히스토리 제목-->
       <ion-item>
         <ion-textarea class="boardTitleText" autosize rows="1" formControlName="boardTitileForm" type="text" [placeholder]="boardTitlePlaceHolder"
           [(ngModel)]="boardTitle"></ion-textarea>
       </ion-item>
-
+      <!-- <img [src]= "imageURI">
+      <div class="progress-bar">
+        <span [style.width]="workoutProgress">{{workoutProgress}}</span>
+      </div> -->
       <ion-item no-lines>
         <ion-textarea class="boardContentsArea" autosize rows="1" formControlName="boardContentForm" type="text" [placeholder]="boardContentPlaceHolder"
           [(ngModel)]="boardContent" [class.error1]="!historyBoardForm.controls.boardContentForm.valid
-           && historyBoardForm.controls.boardContentForm.dirty"></ion-textarea>
+           && historyBoardForm.controls.boardContentForm.dirty">
+           
+          </ion-textarea>
       </ion-item>
       <p></p>
     </ion-list>
   </form>
 </ion-content>
-
+<ion-fab right bottom>
+  <button ion-fab (click)="presentActionSheet()">
+    <ion-icon name="trash"></ion-icon>
+  </button>
+</ion-fab>
 <ion-footer class="boardBottomToolbar">
   <!-- 하단 게시판 입력 보조 툴바 (이미지 업로드, 글자 조정 등)-->
   <ion-toolbar>
     <ion-row>
       <!-- 저장된 이미지/ 촬영이미지/ 동영상 업로드 -->
-      <ion-col class="boardBottomToolBtn">
+      <!-- <ion-col class="boardBottomToolBtn">
         <ion-icon (click)="viewAddImage()" name="ios-image-outline"></ion-icon>
+      </ion-col> -->
+      <ion-col class="boardBottomToolBtn">
+        <ion-icon (click)="presentActionSheet()" name="ios-image-outline"></ion-icon>
       </ion-col>
-
+    
       <!-- 위치 -->
       <ion-col class="boardBottomToolBtn">
-        <ion-icon (click)="viewAddLocation" name="ios-pin-outline"></ion-icon>
+        <ion-icon (click)="viewAddLocation()" name="ios-pin-outline"></ion-icon>
       </ion-col>
 
       <!-- 평점 -->
       <ion-col class="boardBottomToolBtn">
-        <ion-icon (click)="viewAddRating" name="ios-star-outline"></ion-icon>
+        <ion-icon (click)="viewAddRating()" name="ios-star-outline"></ion-icon>
       </ion-col>
 
       <!-- 기분(filling) -->
       <ion-col class="boardBottomToolBtn">
-        <ion-icon (click)="viewAddFeeling" name="ios-sad-outline"></ion-icon>
+        <ion-icon (click)="viewAddFeeling()" name="ios-sad-outline"></ion-icon>
       </ion-col>
 
       <!-- 태그 (제일 우측에) -->
       <ion-col class="boardBottomToolBtn">
-        <div (click)="viewAddTag">#</div>
+        <div (click)="viewAddTag()">#</div>
       </ion-col>
 
       <!-- 다른 sns로 포스팅  -->

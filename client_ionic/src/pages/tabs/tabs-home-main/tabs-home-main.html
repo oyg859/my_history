@@ -21,6 +21,259 @@
   </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <!-- 메인 백그라운드 div-->
+  <div class="appBackground">
 
+
+    <!--타이틀 텍스트 -->
+    <div  class="recommendBoardTitleTxt">
+      <ion-row >
+        <ion-col col-9 >
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em;  padding-top:1px;">
+           <strong> &emsp;추천 히스토리</strong></div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right >
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>더보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+<!-- ///////////////// 게시글 리스트 ///////////////// -->
+
+<!-- 유저 (프로필 사진, 이름) -->
+<div class="userBar" >
+<ion-row >
+  <ion-col col-2 class="userImage" >
+      <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+          <ion-avatar item-start >
+              <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w773">
+          </ion-avatar>
+          
+      </ion-item>
+  </ion-col>
+  <ion-col col-3 class="userNameCol" >
+      <span class="userName" >&emsp;김주승</span>
+      <div class="regDate">30분전</div>
+  </ion-col>
+  <ion-col col-5 no-padding>
+      <ion-item  class="boardlocationInfoCol" no-lines>
+        <ion-icon name="ios-pin"></ion-icon>
+        &nbsp; 에티오피아, 티야
+        <p></p>
+      </ion-item>
+    </ion-col>
+  <ion-col col-2>
+    <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+      팔로우
+    </button>
+  </ion-col>
+</ion-row>
+</div>
+
+ <!-- 게시글 대표 이미지 -->
+ <button class="recommendBoardImage"  no-padding ion-button (click)="goHistoryByAgePage()">
+    <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfMTY0/MDAxNTMwMDg0OTEzNTEz.xZvrZ1thX0ZGIRgVDDHXp-IQ9pCBVL-qYVOjyEqurysg.TrVgtfoz6atIzOlE0Q9KkJ3j7874BpcKsfkOfD6jnqEg.PNG.oyg11/%EA%B7%B8%EB%A6%BC9.png?type=w773" />
+    <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
+    <div class="category-title">에피아의 추억 (이디오피아) </div>
+    <div class="category-subtitle">3살 어느 여름날, 오랜만의 나들이로 설레이는...</div>
+    <!-- </button> -->
+  </button>
+  <!-- 게시글 서브 이미지 -->
+  <ion-row >
+      <ion-col class="boardSubImageCol" no-padding>
+        <img class="boardSubImage" src="https://c.pxhere.com/photos/16/db/child_africa_black_guinea_bissau_hair_culture_poverty-940150.jpg!d" />
+      </ion-col>
+      <ion-col class="boardSubImageCol"  no-padding>
+        <img class="boardSubImage" src="https://c.pxhere.com/photos/b0/8f/girl_africa_female_look_beauty_cilia_black_child-940158.jpg!d" />
+      </ion-col>
+      <ion-col class="boardSubImageCol"  no-padding>
+        <img class="boardSubImage" src="https://c.pxhere.com/photos/d2/df/girl_africa_friendly_smile_dishes_washing_up_poverty_bissau-940170.jpg!d" />
+      </ion-col>
+    </ion-row>
+
+    <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+    <ion-row class="homeBoardSelectBtn">
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+            <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <!-- <button ion-button icon-start clear small> -->
+            <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+<!-- 프로토타입을 위해 위의 게시글 관련 반복-->
+
+<!-- ///////////////// 게시글 리스트 ///////////////// -->
+
+<!-- 유저 (프로필 사진, 이름) -->
+<div class="userBar" >
+<ion-row >
+  <ion-col col-2 class="userImage" >
+      <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+          <ion-avatar item-start >
+              <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfODAg/MDAxNTMwMDY2NDY0NTA3.SQ4WlABTZ-PQgjZxkrJcyDAVcXfYBH8_k4zOMdOeRT0g.YWqjpz260ReqCiniN1GQu1Ol94GkXYbJLM6qDJsM3b0g.PNG.oyg11/profile3.png?type=w773">
+          </ion-avatar>
+          
+      </ion-item>
+  </ion-col>
+  <ion-col col-3 class="userNameCol" >
+      <span class="userName" >&emsp;이진하</span>
+      <div class="regDate">30분전</div>
+  </ion-col>
+  <ion-col col-5 no-padding>
+      <ion-item  class="boardlocationInfoCol" no-lines>
+        <ion-icon name="ios-pin"></ion-icon>
+        &nbsp; 한국, 의정부
+        <p></p>
+      </ion-item>
+    </ion-col>
+  <ion-col col-2>
+    <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+      팔로우
+    </button>
+  </ion-col>
+</ion-row>
+</div>
+
+ <!-- 게시글 대표 이미지 -->
+ <button class="recommendBoardImage"  no-padding ion-button (click)="goHistoryByAgePage()">
+    <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfOTcg/MDAxNTMwMDg0OTEzOTAw.NajFJIw4Yoz2yRrF2Tftq15UgI6JrORWCuRjYLgMAIAg.VBTUhZSdfZUOE9q2p1EYZGEfruno-BZOvJs6XuxVgOMg.PNG.oyg11/%EA%B7%B8%EB%A6%BC10.png?type=w773" />
+    <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
+    <div class="category-title">할머니의 하루</div>
+    <div class="category-subtitle">우리 할머니는 아침이면 늘 공원에 나가 벤치에...</div>
+    <!-- </button> -->
+  </button>
+  <!-- 게시글 서브 이미지 -->
+  <ion-row >
+      <ion-col class="boardSubImageCol" no-padding>
+        <img class="boardSubImage" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTIg/MDAxNTMwMDg0MjIzMDc4.KOz8T8n0Cds5DB8hddHr4tWvLOGg-keBku_x7Cn-gPQg.FqD0PO_kMV88EbYYxHC1A0ZK6R0DeZIsBhkJm5j2kf4g.PNG.oyg11/%EA%B7%B8%EB%A6%BC2.png?type=w773" />
+      </ion-col>
+      <ion-col class="boardSubImageCol"  no-padding>
+        <img class="boardSubImage" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTU2/MDAxNTMwMDg0OTE0Njc4.Iphc_5LlRLrfDiJYkQ9huMFzh8u4VgNbvxBflCaMxTkg.9PcSqy0f7yVs0woy8z1ql6iFFvhbyGzrKFtD6oONjiog.PNG.oyg11/%EA%B7%B8%EB%A6%BC15.png?type=w773" />
+      </ion-col>
+      <ion-col class="boardSubImageCol"  no-padding>
+        <img class="boardSubImage" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Parisian_Traffic%2C_Spring_1945-_Everyday_Life_in_Paris%2C_France%2C_1945_D24176.jpg" />
+      </ion-col>
+    </ion-row>
+
+    <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+    <ion-row class="homeBoardSelectBtn">
+        <ion-col>
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+            <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear>
+            <!-- <button ion-button icon-start clear small> -->
+            <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+<!-- ///////////////// 게시글 리스트 ///////////////// -->
+
+<!-- 유저 (프로필 사진, 이름) -->
+<div class="userBar" >
+    <ion-row >
+      <ion-col col-2 class="userImage" >
+          <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+              <ion-avatar item-start >
+                  <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w773">
+              </ion-avatar>
+              
+          </ion-item>
+      </ion-col>
+      <ion-col col-3 class="userNameCol" >
+          <span class="userName" >&emsp;김주승</span>
+          <div class="regDate">30분전</div>
+      </ion-col>
+      <ion-col col-5 no-padding>
+          <ion-item  class="boardlocationInfoCol" no-lines>
+            <ion-icon name="ios-pin"></ion-icon>
+            &nbsp; 에티오피아, 티야
+            <p></p>
+          </ion-item>
+        </ion-col>
+      <ion-col col-2>
+        <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+          팔로우
+        </button>
+      </ion-col>
+    </ion-row>
+    </div>
+    
+     <!-- 게시글 대표 이미지 -->
+     <button class="recommendBoardImage"  no-padding ion-button (click)="goHistoryByAgePage()">
+        <img  src="https://postfiles.pstatic.net/MjAxODA2MjdfMTY0/MDAxNTMwMDg0OTEzNTEz.xZvrZ1thX0ZGIRgVDDHXp-IQ9pCBVL-qYVOjyEqurysg.TrVgtfoz6atIzOlE0Q9KkJ3j7874BpcKsfkOfD6jnqEg.PNG.oyg11/%EA%B7%B8%EB%A6%BC9.png?type=w773" />
+        <!-- <button style="height:80px;" value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full no-padding></button> -->
+        <div class="category-title">에피아의 추억 (이디오피아) </div>
+        <div class="category-subtitle">3살 어느 여름날, 오랜만의 나들이로 설레이는...</div>
+        <!-- </button> -->
+      </button>
+      <!-- 게시글 서브 이미지 -->
+      <ion-row >
+          <ion-col class="boardSubImageCol" no-padding>
+            <img class="boardSubImage" src="https://c.pxhere.com/photos/16/db/child_africa_black_guinea_bissau_hair_culture_poverty-940150.jpg!d" />
+          </ion-col>
+          <ion-col class="boardSubImageCol"  no-padding>
+            <img class="boardSubImage" src="https://c.pxhere.com/photos/b0/8f/girl_africa_female_look_beauty_cilia_black_child-940158.jpg!d" />
+          </ion-col>
+          <ion-col class="boardSubImageCol"  no-padding>
+            <img class="boardSubImage" src="https://c.pxhere.com/photos/d2/df/girl_africa_friendly_smile_dishes_washing_up_poverty_bissau-940170.jpg!d" />
+          </ion-col>
+        </ion-row>
+    
+        <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+        <ion-row class="homeBoardSelectBtn">
+            <ion-col class="homeBoardSelectBtnCol">
+              <button ion-button icon-start clear>
+                <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+                <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+              </button>
+            </ion-col>
+            <ion-col class="homeBoardSelectBtnCol">
+              <button ion-button icon-start clear>
+                <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+                <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+              </button>
+            </ion-col>
+            <ion-col class="homeBoardSelectBtnCol">
+              <button ion-button icon-start clear>
+                <!-- <button ion-button icon-start clear small> -->
+                <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+                <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+              </button>
+            </ion-col>
+          </ion-row>
+      <!-- 게시글 반복 종료 -->
+
+</div>
 </ion-content>

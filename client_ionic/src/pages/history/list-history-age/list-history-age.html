@@ -29,8 +29,10 @@
   <!-- 연도별 사진 목록 -->
   <ion-list> 
     <div *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-      <div class="ageListBar" style='background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMjc2/MDAxNTI5NTUyODM0ODM1.yt9YeHeW8xFakojinuH3Bc1Tb_kDTgkZR7VxPk2QClQg.XLn1QrBgh8yAYeQwT3JwnVtTrPAavB9L00TOO-WKzKMg.PNG.oyg11/image.png?type=w773");'>
-        <ion-row>
+      <!-- <div class="ageListBar" style='background-image: url("https://postfiles.pstatic.net/MjAxODA2MjFfMjc2/MDAxNTI5NTUyODM0ODM1.yt9YeHeW8xFakojinuH3Bc1Tb_kDTgkZR7VxPk2QClQg.XLn1QrBgh8yAYeQwT3JwnVtTrPAavB9L00TOO-WKzKMg.PNG.oyg11/image.png?type=w773");'> -->
+        <div class="ageListBar">
+          <img class="ageListBarImg" src={{d.barImgUrl}}>
+        <ion-row> 
           <ion-col col-3>
             <div class="ageText">{{d.age}}</div>
           </ion-col>
@@ -49,34 +51,54 @@
 
       <div *ngIf="isGroupShown(i)">
         <div class="imgHistoryInfo">
-          2월 7일 &ensp; (13) &emsp;
+          2월 7일 &ensp; (6) &emsp;
           <ion-icon class="categoryHeaderEditImg" name="ios-pin"></ion-icon>서울 강서구 화곡동 외 5장소
         </div>
         <div class="historyImgRow">
-          <ion-row>
+          
               <ion-col no-padding>
-                  <img class="historyImg"  src={{d.imgUrl}} />
+                  <img class="historyImg"  src="https://c.pxhere.com/photos/b0/8f/girl_africa_female_look_beauty_cilia_black_child-940158.jpg!d" />
                
                 </ion-col>
                 <ion-col no-padding>
-                  <img class="historyImg" src={{d.imgUrl}} />
+                  <img class="historyImg" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Parisian_Traffic%2C_Spring_1945-_Everyday_Life_in_Paris%2C_France%2C_1945_D24176.jpg" />
                 
                 </ion-col>
                 <ion-col no-padding>
-                  <img class="historyImg" src={{d.imgUrl}} />
+                  <img class="historyImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTIy/MDAxNTMwMDg0MDE2Mzgy.bQ2EYZxECHsFn1Kod3i8BZlL3__M4Mr7uU_fndipEmcg.pCtobBww5_2Pklzqc8_yIrbeH6Vdzs6SkbUExylEvGIg.PNG.oyg11/image.png?type=w773" />
             
                 </ion-col>
                 <ion-col no-padding>
-                  <img class="historyImg" src={{d.imgUrl}} />
+                  <img class="historyImg" src="https://cdn.pixabay.com/photo/2017/06/26/02/47/people-2442565_960_720.jpg" />
           
                 </ion-col>
                 <ion-col no-padding>
-                  <img class="historyImg" src={{d.imgUrl}} />
+                  <img class="historyImg" src="https://c.pxhere.com/photos/6a/37/grandma_reading_grandmother_senior_elderly_people_book_granny-883613.jpg!d" />
                
                 </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src="https://c.pxhere.com/images/82/85/58f191d34dbb90a575047decedf4-1427937.jpg!s" />
+                </ion-col>
 
-          </ion-row>
         </div>
+
+        <div class="imgHistoryInfo">
+          3월 8일 &ensp; (3) &emsp;
+          <ion-icon class="categoryHeaderEditImg" name="ios-pin"></ion-icon>도쿄 하라주쿠 외 2장소
+        </div>
+        <div class="historyImgRow">
+                <ion-col no-padding>
+                  <img class="historyImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w773" />
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src="https://postfiles.pstatic.net/MjAxODA2MjdfMjgx/MDAxNTMwMDY2NTE1OTM0.sPKjo8dbU_Cw3UwfkilxVu2gYkaZnto58leoF1zx70kg.8dvJ-mbk4MxtC2mTcD3Ba6eFmyZRw7RWreYk27XqoJMg.JPEG.oyg11/baby_8.jpg?type=w773" />
+                </ion-col>
+                <ion-col no-padding>
+                  <img class="historyImg" src="https://c.pxhere.com/images/b8/f4/cf0a27ee43ef15189627ccce8523-1423629.jpg!s" />
+                </ion-col>
+        </div>
+
+
       </div>
 
     </div>

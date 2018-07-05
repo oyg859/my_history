@@ -1,33 +1,472 @@
-<!--
-  Generated template for the TabsLocationMainPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-      <ion-row>
-          <ion-col col-8 class="topNavBar">
-            <h5><strong>장소</strong></h5>
-          </ion-col>
-          <ion-col col-2 text-right>
-            <button ion-button class="topNavNoticeBtn" icon-start clear small (click)="addCategory()"e>
-              <ion-icon class="categoryHeaderEditImg" name="ios-notifications"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-2 text-right>
-            <button ion-button class="topNavSearchBtn" icon-start clear small (click)="addCategory()">
-              <ion-icon class="categoryHeaderEditImg" name="ios-search"></ion-icon>
-            </button>
-          </ion-col>
-        </ion-row>
+    <ion-row>
+      <ion-col col-8 class="topNavBar">
+        <h5>
+          <strong>장소</strong>
+        </h5>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavNoticeBtn" icon-start clear small (click)="addCategory()" e>
+          <ion-icon class="categoryHeaderEditImg" name="ios-notifications"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-right>
+        <button ion-button class="topNavSearchBtn" icon-start clear small (click)="addCategory()">
+          <ion-icon class="categoryHeaderEditImg" name="ios-search"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <!-- 메인 백그라운드 div-->
+  <div class="appBackground">
+
+    <!--타이틀 텍스트_ 이 근처 추천장소  -->
+    <div class="recommendLocationTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em; ">
+              <strong> &emsp;이 근처 주목받는 장소</strong>
+            </div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>더보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- 추천장소 카드 (수평 스크롤) -->
+
+    <ion-scroll scrollX="true" style="height: 240px" direction="x">
+      <ion-card class="recommendLocationCard">
+        <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              한옥식당
+              <span class="locationSubInfo">&ensp;1.5km</span>
+            </div>
+            <p class="locationSubInfo">식당 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMzAg/MDAxNTMwMDA0NzM0NTQ4.MnuKfCv-IIxY8Abtk_SfwiqX8Y9TIFJrgBSyC7IdZCUg.9BESk35G8Q0Br5hiiPx6HEMhpQzrPsfzgddive70luog.JPEG.oyg11/milky-way-1030765__340.jpg?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              해돋마루 언덕
+              <span class="locationSubInfo">&ensp;300m</span>
+            </div>
+            <p class="locationSubInfo">관광 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.5</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;32,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;3,103</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              한옥식당
+            </div>
+            <p class="locationSubInfo">식당 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              한옥식당
+            </div>
+            <p class="locationSubInfo">식당 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-scroll>
+
+    <!--타이틀 텍스트_ 인기 장소  -->
+    <div class="popularLcationTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em; ">
+              <strong> &emsp; 인기 장소</strong>
+            </div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>더보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- 인기장소 카드 (수평 스크롤) -->
+
+    <ion-scroll scrollX="true" style="height: 240px" direction="x">
+      <ion-card class="recommendLocationCard">
+        <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MjdfMTIy/MDAxNTMwMDg0MDE2Mzgy.bQ2EYZxECHsFn1Kod3i8BZlL3__M4Mr7uU_fndipEmcg.pCtobBww5_2Pklzqc8_yIrbeH6Vdzs6SkbUExylEvGIg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+                파리 샹들리에 거리
+            </div>
+            <p class="locationSubInfo">관광 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              프랑스, 파리</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://c.pxhere.com/photos/d3/cc/adventure_brak_mountains_person_sea_silhouette_standing_sunrise-1107512.jpg!d"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              오키나와 만좌모
+              <span class="locationSubInfo">&ensp;945 km</span>
+            </div>
+            <p class="locationSubInfo">관광 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              일본, 오키나와</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              한옥식당
+            </div>
+            <p class="locationSubInfo">식당 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              한옥식당
+            </div>
+            <p class="locationSubInfo">식당 &nbsp;
+              <ion-icon name="ios-pin"></ion-icon>
+              경기도 화성시 병점</p>
+            <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+            <span class="locationSubInfo">&ensp;4.2</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-thumbs-up"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;5,190</span>
+            &emsp;
+            <ion-icon class="locationSubInfo" style="color: rgb(155, 155, 155); margin-right: -5px;" name="ios-text-outline"></ion-icon>
+            &nbsp;
+            <span class="locationSubInfo">&ensp;508</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-scroll>
+
+    <!--타이틀 텍스트_ 추천 유저   -->
+    <div class="popularLcationTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em; ">
+              <strong> &emsp; 추천 유저</strong>
+            </div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="doLogout()">
+            <p>더보기</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- 추천유저 카드 (수평 스크롤) -->
+
+    <ion-scroll scrollX="true" style="height: 240px" direction="x">
+      <ion-card class="recommendLocationCard">
+        <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+          <div class="locationInfoDiv" text-left>
+            <div class="locatinName">
+              김성근
+            </div>
+            <p class="locationSubInfo"><ion-icon name="ios-pin"></ion-icon>&ensp; 방문 지역수: 30,232 &nbsp;
+              </p>
+              <p class="locationSubInfo"><ion-icon name="ios-thumbs-up"></ion-icon>&ensp; 추천수: 291,237 </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+            <div class="locationInfoDiv" text-left>
+                <div class="locatinName">
+                 홍길동
+                </div>
+                <p class="locationSubInfo"><ion-icon name="ios-pin"></ion-icon>&ensp; 방문 지역수: 72,532 &nbsp;
+                </p>
+                <p class="locationSubInfo"><ion-icon name="ios-thumbs-up"></ion-icon>&ensp; 추천수: 392,237 </p>
+ 
+              </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+            <div class="locationInfoDiv" text-left>
+                <div class="locatinName">
+                  이수만
+                </div>
+                <p class="locationSubInfo"><ion-icon name="ios-pin"></ion-icon>&ensp; 방문 지역수: 12,232 &nbsp;
+                </p>
+                <p class="locationSubInfo"><ion-icon name="ios-thumbs-up"></ion-icon>&ensp; 추천수: 93,237 </p>
+   
+              </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="recommendLocationCard">
+        <img class="profileHistoryPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+        />
+        <ion-card-content>
+            <div class="locationInfoDiv" text-left>
+                <div class="locatinName">
+                  이석주
+                </div>
+                <p class="locationSubInfo"><ion-icon name="ios-pin"></ion-icon>&ensp; 방문 지역수: 77,232 &nbsp;
+                </p>
+                <p class="locationSubInfo"><ion-icon name="ios-thumbs-up"></ion-icon>&ensp; 추천수: 791,237 </p>
+   
+              </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-scroll>
+
+    <!-- /////////// 팔로잉 유저 게시글 /////////// -->
+    <!--타이틀 텍스트_ 유저   -->
+    <div class="popularLcationTitleTxt">
+      <ion-row>
+        <ion-col col-9>
+          <button ion-button icon-start clear>
+            <div style="color: black; font-size: 1.1em; ">
+              <strong> &emsp; 팔로잉 유저 게시글</strong>
+            </div>
+          </button>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <button clear class="viewAllBtn" ion-button (click)="viewAdjustCategory()">
+            <span>
+              <ion-icon class="adjustCategory" name="ios-options"></ion-icon>
+            </span>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- 유저 (프로필 사진, 이름) -->
+    <div class="userBar">
+      <ion-row>
+        <ion-col col-2 class="userImage">
+          <ion-item no-padding style="background-color: rgb(29, 29, 29);">
+            <ion-avatar item-start>
+              <img src="https://postfiles.pstatic.net/MjAxODA2MjdfMjkw/MDAxNTMwMDY2OTc2NzQz.pZU4QgppzRoSnlMA6BFMDoNw9FfO1TGTZHhZADwWh-4g.X4gbPSKXquILKJi5e1R_W65o-d6WZtCjsmotipAxNEAg.PNG.oyg11/20180627_113553.png?type=w773">
+            </ion-avatar>
+
+          </ion-item>
+        </ion-col>
+        <ion-col col-3 class="userNameCol">
+          <span class="userName">&emsp;김주승</span>
+          <div class="regDate">1일전</div>
+        </ion-col>
+        <ion-col col-5 no-padding>
+          <ion-item class="boardlocationInfoCol" no-lines>
+            <ion-icon name="ios-pin"></ion-icon>
+            &nbsp; 한국, 서울 용산
+            <p></p>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <button no-padding class="followtBtn" ion-button (click)="doLogout()" round>
+            팔로우
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- 유저 게시글 본문 -->
+
+    <div class="boardLocationInfoDiv" text-left>
+      <ion-item>
+        <div class="locatinName">
+          보라매 공원 호수
+        </div>
+        <p class="locationSubInfo">식당 &nbsp;
+          <ion-icon name="ios-pin"></ion-icon>
+          서울시 관악구 신림동 보라매 323-1</p>
+        <span class="locationSubInfo"> 유저 평점 </span>
+        <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+        <span class="locationSubInfo">&ensp;3.8</span>
+        &emsp;
+        <span class="locationSubInfo">전체 평점</span>
+        <ion-icon style="color: rgb(255, 231, 13); margin-right: -5px;" name="ios-star"></ion-icon>
+        <span class="locationSubInfo">&ensp;4.2</span>
+        <br>
+        <br> 어제 오랜만에 보라매 벤치에서 힐링했다.
+      </ion-item>
+      <!-- 추천유저 카드 (수평 스크롤) -->
+
+      <ion-scroll class="locationBoardImg" scrollX="true" style="height: 130px" direction="x">
+        <ion-card class="locationBoardImgCard">
+          <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MjZfMTc2/MDAxNTMwMDA0NzQ2Mjkw.owL8KBDUwketAtoRnVzooP5HmKhxMB7gN25r0zD8NaIg.lCr0D7b5ZrlEBaX5P8tncKenZB3vNOnrbbvoSFU-B6Yg.JPEG.oyg11/coffee-839234__340.jpg?type=w773"
+          />
+        </ion-card>
+        <ion-card class="locationBoardImgCard">
+            <img class="recommendLocationPic" src="https://c.pxhere.com/images/b8/f4/cf0a27ee43ef15189627ccce8523-1423629.jpg!s"
+            />
+          </ion-card>
+          <ion-card class="locationBoardImgCard">
+              <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+              />
+            </ion-card>
+            <ion-card class="locationBoardImgCard">
+                <img class="recommendLocationPic" src="https://postfiles.pstatic.net/MjAxODA2MTlfMjQ2/MDAxNTI5MzkzMDQxOTY0.AqJC3-Souz6aSvznOt8cm1T04guI9ENr1zGgx8j5ATog.xtcp1SJsMzyQkAatjdf8mzEZK8Etwv9Xmxy5TRWOBpgg.PNG.oyg11/image.png?type=w773"
+                />
+              </ion-card>
+      </ion-scroll>
+    </div>
+    <!-- 게시글 하단 댓글 -->
+    <ion-item class="replyText" no-lines>
+        <strong>김성중</strong> &emsp; 여기 진짜 좋아요!
+      </ion-item>
+      <hr>
+
+    <!-- 게시글 하단 버튼 (좋아요, 댓글, 공유)-->
+    <ion-row class="homeBoardSelectBtn">
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-heart-outline"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;12</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <ion-icon style="color: rgb(71, 70, 70);" name="ios-text-outline"></ion-icon>
+            <div style="color: grey; font-size: 0.8em;">&emsp;8</div>
+          </button>
+        </ion-col>
+        <ion-col class="homeBoardSelectBtnCol">
+          <button ion-button icon-start clear>
+            <!-- <button ion-button icon-start clear small> -->
+            <ion-icon style="color: rgb(71, 70, 70);" name="share"></ion-icon>
+            <div style="color: grey;  font-size: 0.8em;">&emsp;32</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+  </div>
 
 </ion-content>
-

@@ -1,0 +1,23 @@
+
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>이미지 업로드</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img [src]="imageData" style="width: 100%;">
+  <ion-item>
+    <ion-input placeholder="내가 좋아하는 이미지" [(ngModel)]="desc"></ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="saveImage()">
+    <ion-icon name="checkmark"></ion-icon> 저장 & 업로드 이미지
+  </button>
+</ion-content>

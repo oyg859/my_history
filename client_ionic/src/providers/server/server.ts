@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ServerProvider {
   serverAddr: string = "http://127.0.0.1:3000/";
-
+  //serverAddr: string = "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/";
   constructor(public http: HttpClient, private platform: Platform) {
     console.log('Hello ServerProvider Provider');
   }
@@ -25,6 +25,7 @@ export class ServerProvider {
         serverUrl = this.serverAddr + url;  // android, ios
       else
         serverUrl = "http://localhost:8100" + url; // ionic serve
+        console.log("혹시 여기??");
       this.http.get(serverUrl).subscribe((res: any) => {
         resolve(res);
       }, (err) => {
@@ -43,7 +44,7 @@ export class ServerProvider {
         serverUrl = "http://localhost:8100" + url; // ionic serve
       // let headers = new HttpHeaders(
       //   { 'Content-Type': 'application/json' });
-
+      console.log("여기에 포스트??");
       let headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
       this.http.post(serverUrl, body, { headers: headers }).subscribe((res: any) => {
      
@@ -52,6 +53,22 @@ export class ServerProvider {
       }, (err) => {
         reject(err);
 
+      });
+    });
+  }
+
+  delete(url) {
+    return new Promise((resolve, reject) => {
+      console.log("url:" + url);
+      let serverUrl;
+      if (this.platform.is('cordova'))
+        serverUrl = this.serverAddr + url;  // android, ios
+      else
+        serverUrl = "http://localhost:8100" + url; // ionic serve
+      this.http.delete(serverUrl).subscribe((res: any) => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
       });
     });
   }

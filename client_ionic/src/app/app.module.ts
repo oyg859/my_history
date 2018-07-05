@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { ImagesProvider } from '../providers/images/images';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -38,6 +42,8 @@ import { TabsHomeMainPage } from '../pages/tabs/tabs-home-main/tabs-home-main';
 import { TabsLocationMainPage } from '../pages/tabs/tabs-location-main/tabs-location-main';
 import { TabsReviewMainPage } from '../pages/tabs/tabs-review-main/tabs-review-main';
 import { BucketlistMainPage } from '../pages/bucketlist/bucketlist-main/bucketlist-main';
+import { ViewFamilyTreePage } from '../pages/history/view-family-tree/view-family-tree';
+
 
 
 @NgModule({
@@ -62,13 +68,15 @@ import { BucketlistMainPage } from '../pages/bucketlist/bucketlist-main/bucketli
     ListHistoryAgePage,
     TabsHomeMainPage,
     TabsLocationMainPage,
-    TabsReviewMainPage
+    TabsReviewMainPage,
+    ViewFamilyTreePage
   ],
   imports: [ 
     IntroPageModule,
     JoinPageModule,
     LoginPageModule,
     HttpClientModule,
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       menuType: 'push',
@@ -108,13 +116,17 @@ import { BucketlistMainPage } from '../pages/bucketlist/bucketlist-main/bucketli
     ListHistoryAgePage,
     TabsHomeMainPage,
     TabsLocationMainPage,
-    TabsReviewMainPage
+    TabsReviewMainPage,
+    ViewFamilyTreePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: MyErrorHandler},
-    ServerProvider
+    ServerProvider,
+    ImagesProvider,
+    Camera,
+    FileTransfer
   ]
 })
 export class AppModule {}

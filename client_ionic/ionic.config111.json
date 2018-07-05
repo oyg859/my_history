@@ -1,0 +1,39 @@
+{
+  "name": "client_ionic",
+  "app_id": "716e163a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies":[
+    {
+      "path": "/mypage/viewMypageHistory",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/mypage/viewMypageHistory"
+    },
+    {
+      "path": "/member/checkExistEmail",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/member/checkExistEmail"
+    },
+    {
+      "path": "/member/doJoin",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/member/doJoin"
+    },
+    {
+      "path": "/member/doLogin",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/member/doLogin"
+    },
+    
+    {
+      "path": "/member/doLogout",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/member/doLogout"
+    },
+    {
+      "path": "/getInfo",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/getInfo"
+    },
+    {
+      "path": "/images",
+      "proxyUrl": "http://ec2-13-209-77-58.ap-northeast-2.compute.amazonaws.com:3000/images"
+    }
+  ]
+}
