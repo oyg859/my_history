@@ -2,9 +2,12 @@
   "name": "server_side_javascript",
   "version": "1.0.0",
   "description": "Server side javascript tutorials",
-  "main": "hello.js",
+  "main": "app.js",
+  "start": "nodemon app.js --exec babel-node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -43,7 +46,14 @@
     "winston-daily-rotate-file": "^3.1.4"
   },
   "devDependencies": {
-    "webpack": "^4.15.0",
-    "webpack-dev-server": "^3.1.4"
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/node": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "serviceworker-webpack-plugin": "^1.0.0-alpha02",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-node-externals": "^1.7.2"
   }
 }
