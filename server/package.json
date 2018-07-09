@@ -1,7 +1,7 @@
 {
-  "name": "server_side_javascript",
+  "name": "myhistory",
   "version": "1.0.0",
-  "description": "Server side javascript tutorials",
+  "description": "myhistory server source",
   "main": "app.js",
   "start": "nodemon app.js --exec babel-node",
   "scripts": {

@@ -69,7 +69,7 @@ export class JoinPage {
       return true;
        }
      },(err)=>{
-       console.log("post-에러: "+JSON.stringify(err));
+       console.log("post-에러났음ㅇ: "+JSON.stringify(err));
    });
   }
 
