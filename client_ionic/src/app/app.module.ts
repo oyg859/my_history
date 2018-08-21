@@ -44,6 +44,9 @@ import { TabsReviewMainPage } from '../pages/tabs/tabs-review-main/tabs-review-m
 import { BucketlistMainPage } from '../pages/bucketlist/bucketlist-main/bucketlist-main';
 import { ViewFamilyTreePage } from '../pages/history/view-family-tree/view-family-tree';
 
+import { RichTextComponent } from '../components/rich-text/rich-text';
+// ckeditor 지원 코드
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({

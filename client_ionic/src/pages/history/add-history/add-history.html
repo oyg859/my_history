@@ -19,6 +19,8 @@
   </ion-navbar>
 </ion-header>
 
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 
 <ion-content>
   <ion-row>
@@ -50,7 +52,7 @@
     </ion-col>
   </ion-row>
 
-  
+
 
 
   <form [formGroup]="historyBoardForm">
@@ -94,10 +96,9 @@
         </ion-item>
       </div>
 
- <img [src]="base64Image">  
-    
 <!-- 이미지 입출력 유튜브 코드 테스트 -->
-    <h3 [hidden]="images.length !==0" text-center>이미지를 찾을수 없습니다.</h3>  
+    <!-- <h3 [hidden]="images.length !==0" text-center>이미지를 찾을수 없습니다.</h3> 
+
     
     <ion-list>
         <ion-item-sliding *ngFor="let img of images">
@@ -117,7 +118,7 @@
             </button>
           </ion-item-options>
         </ion-item-sliding>
-      </ion-list> 
+      </ion-list>  -->
 
       <!-- 히스토리 제목-->
       <ion-item>
@@ -128,13 +129,19 @@
       <div class="progress-bar">
         <span [style.width]="workoutProgress">{{workoutProgress}}</span>
       </div> -->
+
       <ion-item no-lines>
-        <ion-textarea class="boardContentsArea" autosize rows="1" formControlName="boardContentForm" type="text" [placeholder]="boardContentPlaceHolder"
+        <ion-textarea class="boardContentsArea" autosize rows="1" formControlName="boardContentForm" type="text"
+         [placeholder]="boardContentPlaceHolder"
           [(ngModel)]="boardContent" [class.error1]="!historyBoardForm.controls.boardContentForm.valid
-           && historyBoardForm.controls.boardContentForm.dirty">
-           
+           && historyBoardForm.controls.boardContentForm.dirty">       
           </ion-textarea>
-      </ion-item>
+        </ion-item>
+        <img src={{previewImage}} id="preview" (click)="imageControl()"  />
+        <ion-textarea id="textareaAfterAddImage" *ngIf="previewImage" class="boardTitleText" autosize rows="1" formControlName="boardTitileForm" type="text" 
+        [(ngModel)]="boardTitle"></ion-textarea>
+        
+        <div [innerHTML]=imageAreaHtml >이미지 추가내역</div> 
       <p></p>
     </ion-list>
   </form>

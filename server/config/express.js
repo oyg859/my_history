@@ -1,13 +1,14 @@
 module.exports = function () {
 
     var express = require('express');
+    var bodyParser = require('body-parser');
     var session = require('express-session');
     var FileStore = require('session-file-store')(session);
-    var bodyParser = require('body-parser');
-    
+    var multer = require('multer');
+
     var cors = require('cors');
 
-    var logger = require('morgan');
+    // var logger = require('morgan');
     var path = require('path');
     var app = express();
 
@@ -19,9 +20,10 @@ module.exports = function () {
     }));
 
     var passport = require('./passport')(app);
-    
-   // 유튜브 이미지 제어 코드 
 
+    /**
+     *  파일 업로드
+     */
     // let UPLOAD_PATH = 'uploads';
 
     // var storage = multer.diskStorage({
@@ -29,14 +31,14 @@ module.exports = function () {
     //         cb(null, UPLOAD_PATH);
     //     },
     //     filename: function (req, file, cb) {
-    //         cb(null, file.fieldname + '-' + Date.now());
+    //         cb(null, file.fieldname + '-' + Date.now()+'.jpg');
     //     }
     // });
     // let upload = multer({ storage: storage });
     
     // 위에 동일 코드 있어서 주석처리
     // export const app = express();
-    // app.use(cors());
+    //app.use(cors());
 
     // var routes = require('./routes');
 
@@ -58,17 +60,38 @@ module.exports = function () {
     var mypageRouter = require('../routes/mypage/mypage.routes');
     var memberRouter = require('../routes/member/member.routes');
 
+    // app.post('/images', upload.single('image'), (req,res, next)=>{
+    //     console.log("이미지업로드 포스트 메서드 진입");
+    // });
    
-
-    app.set('view engine', 'html');
-    app.set('views', __dirname + '../../client_ionic/src/pages/**');
-    app.use(express.static(path.join(__dirname + 'pages/**')));
-
     //app.use(require('../middlewares'));
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use('/mypage', mypageRouter);
     app.use('/member', memberRouter);
-    app.use('/images', imageRouter);
+
+    // app.post('/images', upload.single('image'), function (req, res) {
+    //     console.log(req.file);
+        
+    //     console.log("upload::???" + storage);
+    // });
+     app.use('/images', imageRouter);
+
+
+    app.set('view engine', 'jade');
+    app.set('views', './views_file');
+    app.locals.pretty = true;
+    
+    ////////////////////////////////
+    // 파일업로드 폼으로 이동
+    app.get('/upload', function(req, res) {
+        res.render('upload');
+    })
+    
+   // 파일 업로드 제출시
+//    app.post('/upload', upload.single('userfile'), function(req, res) {
+//     console.log(req.file);
+//     res.send('Upload' + req.file.originalname);
+// })
 
      app.get('/a', function(req, res){
          res.send("왔어");

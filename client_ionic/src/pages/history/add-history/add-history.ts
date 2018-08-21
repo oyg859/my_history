@@ -21,6 +21,14 @@ var page;
 export class AddHistoryPage {
   
   images:any = [];
+
+  // 모바일에서 얻은 이미지 출력변수
+
+  previewImage:string;
+
+  imageFromMobile:any;
+  imageAreaHtml:any;
+
   imageURI;  // 이미지 경로
 
 
@@ -50,6 +58,8 @@ export class AddHistoryPage {
   boardTitlePlaceHolder:string = "히스토리 제목 (입력 선택)"
   boardContentPlaceHolder:string = "어떠한 일이 있었나요?"
 
+  ima1:any;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private appCtrl:App, private platForm: Platform, private camera: Camera,
     private transfer : FileTransfer, private ngZone: NgZone,
@@ -66,6 +76,8 @@ export class AddHistoryPage {
       // this.platForm.ready().then(()=>{
       //   this.fileTransfer= this.transfer.create();
       // });
+
+      this.ima1 = "file:///storage/emulated/0/Android/data/io.ionic.starter/cache/IMG_0774.jpg?1531396730920";
     }
 
   ionViewDidLoad() {
@@ -73,6 +85,7 @@ export class AddHistoryPage {
   }
 
   
+
 
 
 
@@ -120,6 +133,35 @@ export class AddHistoryPage {
     actionSheet.present();
   }
 
+  getProfileImageStyle() {
+    console.log("얻어온 이미지는 ?: "+ this.imageFromMobile);
+    return 'url(' + "http://4.bp.blogspot.com/-HMGbzfoH0y0/Vm59pnG0j4I/AAAAAAAAAE0/ds2HClG_ejU/s1600/%25EC%25B0%25A9%25EC%259A%25A9%25EC%2583%25B7.jpg" + ')'
+  }
+
+  img1:any;
+
+  fileChange(event){
+    if(event.target.files && event.target.files[0]){
+      let reader = new FileReader();
+
+      reader.onload = (event:any) => {
+        this.img1 = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+      let fileList: FileList = event.target.files;  
+      let file: File = fileList[0];
+      console.log(file);
+  }
+
+  // 프리뷰 이미지 컨트롤
+  imageControl(){
+    console.log("이미지 컨트롤 실행");
+  //  this.previewImage = undefined;
+    this.previewImage = "";
+  }
+
+  // 이미지 불러오기
   takePicture(sourceType){
     var options = {
       quality: 100,
@@ -129,16 +171,31 @@ export class AddHistoryPage {
       correctOrientation: true
     }
 
-    this.camera.getPicture(options).then(imagePath => {
+    this.camera.getPicture(options).then((imagePath) => {
+    
+      this.previewImage = imagePath;
+      let imgAreaTag = '<img src={{previewImage}} id="preview" (click)="imageControl()"  />'
+      document.getElementById('textareaAfterAddImage').outerHTML = imgAreaTag;
       
-      let modal = this.modalCtrl.create('UploadModalPage', { data: imagePath });
+      // document.getElementById('preview').innerHTML = '<ion-textarea *ngIf="previewImage" class="boardTitleText" autosize rows="1" formControlName="boardTitileForm" type="text" [placeholder]="boardTitlePlaceHolder" [(ngModel)]="boardTitle"></ion-textarea>';
+      //this.previewImage = 'data:image/jpeg;base64,' + imagePath;
+      console.log("이미지 프리뷰 데이터: >>>>>>>>>"+ this.previewImage);
+      //this.imageFromMobile = imagePath;
+      // this.imageFromMobile = "http://4.bp.blogspot.com/-HMGbzfoH0y0/Vm59pnG0j4I/AAAAAAAAAE0/ds2HClG_ejU/s1600/%25EC%25B0%25A9%25EC%259A%25A9%25EC%2583%25B7.jpg";
+      // console.log("이미지 선택 결과 데이터: >>>>>>>>>"+ this.imageFromMobile);
+      // this.imageAreaHtml = '<img src={{imageFromMobile}} style="width: 100%;">이미지 출력좀<br><ion-textarea autosize rows="1" type="text" ></ion-textarea>';
       
-      modal.present();
-      modal.onDidDismiss(data => {
-        if (data && data.reload) {
-          this.reloadImages();
-        }
-      });
+      // document.body.style.backgroundImage = "url(this.imageFromMobile)";
+      
+      ///// 유튜브 업로드 예시 코드
+      // let modal = this.modalCtrl.create('UploadModalPage', { data: imagePath });
+      
+      // modal.present();
+      // modal.onDidDismiss(data => {
+      //   if (data && data.reload) {
+      //     this.reloadImages();
+      //   }
+      // });
     }, err => {
       console.log('Error: ', err);
     });

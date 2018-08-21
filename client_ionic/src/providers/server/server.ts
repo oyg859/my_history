@@ -25,7 +25,7 @@ export class ServerProvider {
      
       else
         serverUrl = "http://localhost:8100" + url; // ionic serve
-        console.log("혹시 여기??");
+        console.log("서버 프로바이더 get 으로 진입");
       this.http.get(serverUrl).subscribe((res: any) => {
         resolve(res);
       }, (err) => {
@@ -50,7 +50,6 @@ export class ServerProvider {
       let headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
       this.http.post(serverUrl, body, { headers: headers }).subscribe((res: any) => {
      
-        console.log("무슨 에러입니까~~~~~~~~!!"+serverUrl);
         resolve(res);
       }, (err) => {
         reject(err);

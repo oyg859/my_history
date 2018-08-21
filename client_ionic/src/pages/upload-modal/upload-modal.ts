@@ -19,6 +19,7 @@ export class UploadModalPage {
 
   saveImage(){
     this.imageProvider.uploadImage(this.imageData, this.desc).then(res => {
+      console.log("이미지 업로드 전송 후 서버로부터 리턴 성공");
       this.viewCtrl.dismiss({reload: true});
     }, err =>{
       this.viewCtrl.dismiss();

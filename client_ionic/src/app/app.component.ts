@@ -11,7 +11,7 @@ import { TabsHomeMainPage } from '../pages/tabs/tabs-home-main/tabs-home-main';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = IntroPage;
+  rootPage:any = TabsPage;
   @ViewChild(Nav) nav:Nav;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
